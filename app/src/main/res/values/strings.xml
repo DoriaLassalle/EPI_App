@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">EPI_App</string>
+    <string name="cerrar_app">Cerrar App</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="register_fragment_label">Register Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="ingresar">ingresar</string>
+    <string name="registrarme_como_usuario">Registrarme como Usuario</string>
+    <string name="ingresa_tu_correo">Correo Usuario</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="olvidaste_tu_contrase_a">¿OLVIDASTE TU CONTRASEÑA?</string>
+    <string name="logo">logo</string>
+    <string name="registro_de_nuevo_usuario">REGISTRO DE NUEVO USUARIO</string>
+    <string name="edad_s_lo_n_meros">Edad (sólo números)</string>
+    <string name="correo_electr_nico">Correo Electrónico</string>
+    <string name="apellido_alumn">Apellido Alumn@</string>
+    <string name="contrase_a_min_8_caracteres">Contraseña min. 8 caracteres</string>
+    <string name="repetir_contrase_a">Repetir contraseña</string>
+    <string name="nombre_y_apellido_apoderado">Nombre y Apellido Apoderado</string>
+    <string name="guardar_datos">guardar datos</string>
+    <string name="has_montado_antes">¿HAS MONTADO ANTES?</string>
+    <string name="nombre_alumn">Nombre Alumn@</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ponyname">TextView</string>
+    <string name="ponyface">TODO</string>
+    <string name="botonclases">TODO</string>
+    <string name="botonpony">TODO</string>
+    <string name="botonteam">TODO</string>
+    <string name="botongallery">TODO</string>
+    <string name="botontienda">TODO</string>
+    <string name="loguito">TODO</string>
+
+</resources>

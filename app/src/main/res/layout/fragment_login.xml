@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logosplash" />
+
+        <EditText
+            android:id="@+id/loginMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="@string/ingresa_tu_correo"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="@string/contrase_a"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/crushed"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_redondeado"
+            android:text="@string/ingresar" />
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/crushed"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_redondeado"
+            android:text="@string/registrarme_como_usuario" />
+
+        <TextView
+            android:id="@+id/recuperar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/olvidaste_tu_contrase_a"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/crushed"
+            android:textColor="#950206"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

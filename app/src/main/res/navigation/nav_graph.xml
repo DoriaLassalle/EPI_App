@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.epi_app.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="com.example.epi_app.RegisterFragment"
+        android:label="@string/register_fragment_label"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.epi_app.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_HomeFragment_to_galeryFragment"
+            app:destination="@id/galeryFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ponyFragment"
+            app:destination="@id/ponyFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galeryFragment"
+        android:name="com.example.epi_app.paraDespues.GaleryFragment"
+        android:label="fragment_galery"
+        tools:layout="@layout/fragment_galery" >
+        <action
+            android:id="@+id/action_galeryFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_galeryFragment_to_itemGalleryFragment"
+            app:destination="@id/itemGalleryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemGalleryFragment"
+        android:name="com.example.epi_app.paraDespues.ItemGalleryFragment"
+        android:label="fragment_item_gallery"
+        tools:layout="@layout/fragment_item_gallery" >
+        <action
+            android:id="@+id/action_itemGalleryFragment_to_galeryFragment"
+            app:destination="@id/galeryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ponyFragment"
+        android:name="com.example.epi_app.PonyFragment"
+        android:label="fragment_pony"
+        tools:layout="@layout/fragment_pony" >
+        <action
+            android:id="@+id/action_ponyFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_ponyFragment_to_itemPonyFragment"
+            app:destination="@id/itemPonyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemPonyFragment"
+        android:name="com.example.epi_app.paraDespues.ItemPonyFragment"
+        android:label="fragment_item_pony"
+        tools:layout="@layout/fragment_item_pony" >
+        <action
+            android:id="@+id/action_itemPonyFragment_to_ponyFragment"
+            app:destination="@id/ponyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.example.epi_app.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" >
+        <action
+            android:id="@+id/action_adminFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+</navigation>
