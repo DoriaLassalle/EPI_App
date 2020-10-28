@@ -11,6 +11,6 @@ import retrofit2.http.QueryMap
 interface PonyApi {
 
     @GET("api/")
-    fun fetchAllPony(@QueryMap() pony: Map<String, String> ): Response<Pony> //LO QUE VA A DEVOLVER
+    fun fetchAllPony(@QueryMap() pony: Map<String, String> ): Call<Pony> //LO QUE VA A DEVOLVER
 
 }

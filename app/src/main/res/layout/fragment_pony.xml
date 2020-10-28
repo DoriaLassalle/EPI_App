@@ -6,6 +6,11 @@
     tools:context=".PonyFragment">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPony"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        />
 
 
     <Button
@@ -14,5 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="510dp"
         android:text="Home" />
+
 
 </FrameLayout>

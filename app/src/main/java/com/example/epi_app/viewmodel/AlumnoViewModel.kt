@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.AlumnoDataBase.Companion.getDataBase
 import com.example.epi_app.model.AlumnoRepository
+import com.example.epi_app.model.local.PonyEntity
 
 class AlumnoViewModel (application: Application): AndroidViewModel(application){
 
@@ -34,6 +35,13 @@ class AlumnoViewModel (application: Application): AndroidViewModel(application){
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myRepository.validateUser(correo, contras)
     }
+
+    fun getData(): LiveData<List<PonyEntity>>{
+        myRepository.getPonyPhotoFromApi()  //llama a inet
+        return myRepository.getAllPony()     //va a buscar a la bd
+    }
+
+
 
 
 

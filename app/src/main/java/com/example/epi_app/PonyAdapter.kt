@@ -4,19 +4,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.epi_app.model.local.AlumnoEntity
+import com.example.epi_app.model.local.PonyEntity
 import com.example.epi_app.model.network.Pony
 import kotlinx.android.synthetic.main.pony_list.view.*
 
 class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
 
-    private var ponyList= emptyList<Pony>()
+    private var ponyList= emptyList<PonyEntity>()
+
+    fun updateAdapter(myList: List<PonyEntity>){                 //actualizar el adapt
+        ponyList=myList
+        notifyDataSetChanged()
+    }
 
 
 
     inner class PonyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val imgPony = itemView.imgPonyFace  //id del textview a mostrar en el recycler
-        val namePony= itemView.tvPonyName
+        val likesPony= itemView.tvPonyName
 
 
             }
@@ -31,8 +38,11 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
     override fun onBindViewHolder(holder: PonyAdapter.PonyViewHolder, position: Int) {
        val newPony=ponyList[position]
 
-        //holder.imgPony.text= newPony.image   es una imagen no se que poner aqui
-       // holder.namePony.text=newPony
+
+        //Glide que implementé en gradle para mostrar en el image view
+        Glide.with(holder.itemView.context).load(newPony.largeImageURL).into(holder.imgPony)
+
+        holder.likesPony.text=newPony.likes
     }
 
     override fun getItemCount()= ponyList.size
