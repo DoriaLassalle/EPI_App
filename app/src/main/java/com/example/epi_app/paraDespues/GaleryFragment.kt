@@ -38,7 +38,7 @@ class GaleryFragment : Fragment() {
         mAdapter.updateAdapter(getData())
 
 
-        botGallery.setOnClickListener {
+        cvGallery.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_galeryFragment)
         }
     }

@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".paraDespues.ItemPonyFragment">
-
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,40 +22,50 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvPonyNombre"
+                android:id="@+id/tvTeamNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textAlignment="center"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/crushed"
+                android:text="TextView"
+                android:textAlignment="center"
                 android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvTeamCargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/crushed"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <ImageView
-                android:id="@+id/ivPonyIndiv"
+                android:id="@+id/ivTeamPhoto"
+                tools:src="@tools:sample/avatars"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
-                android:scaleType="fitCenter"
-                tools:src="@tools:sample/avatars" />
+                android:scaleType="fitCenter" />
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/tvPonyText"
+                android:id="@+id/tvTeamText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:fontFamily="sans-serif-condensed"
                 android:textSize="20sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,23 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PonyFragment">
+    tools:context=".TeamFragment">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPony"
+    <ListView
+        android:id="@+id/listViewTeam"
         android:layout_width="match_parent"
-        android:layout_height="537dp" />
-
+        android:layout_height="500dp" />
 
     <Button
-        android:id="@+id/botPonyHome"
+        android:id="@+id/botTeamHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="510dp"
         android:fontFamily="@font/crushed"
         android:textSize="24sp"
-        android:text="@string/home" />
-
+        android:text="@string/home"
+        />
 
 </FrameLayout>

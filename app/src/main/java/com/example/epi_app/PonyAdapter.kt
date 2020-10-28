@@ -19,18 +19,15 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
         notifyDataSetChanged()
     }
 
-
-
     inner class PonyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val imgPony = itemView.imgPonyFace  //id del textview a mostrar en el recycler
         val likesPony= itemView.tvPonyName
 
 
-            }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PonyAdapter.PonyViewHolder {
-        val view=LayoutInflater.from(parent.context).inflate(R.layout.pony_list,
-            parent, false)
+        val view=LayoutInflater.from(parent.context).inflate(R.layout.pony_list, parent, false)
 
         return PonyViewHolder(view)
     }
@@ -38,11 +35,9 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
     override fun onBindViewHolder(holder: PonyAdapter.PonyViewHolder, position: Int) {
        val newPony=ponyList[position]
 
+        Glide.with(holder.itemView.context).load(newPony.largeImageURL).centerCrop().into(holder.imgPony)
 
-        //Glide que implementé en gradle para mostrar en el image view
-        Glide.with(holder.itemView.context).load(newPony.largeImageURL).into(holder.imgPony)
-
-        holder.likesPony.text=newPony.likes
+        holder.likesPony.text="${newPony.likes} Likes "
     }
 
     override fun getItemCount()= ponyList.size

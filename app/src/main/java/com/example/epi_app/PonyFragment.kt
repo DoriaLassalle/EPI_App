@@ -23,17 +23,14 @@ import retrofit2.Response
 
 class PonyFragment : Fragment() {
 
-
-        private val myViewModel: AlumnoViewModel by activityViewModels()
+    private val myViewModel: AlumnoViewModel by activityViewModels()
 
     lateinit var  myAdapter: PonyAdapter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         myAdapter= PonyAdapter()
-
 
     }
 

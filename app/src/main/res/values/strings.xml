@@ -38,5 +38,17 @@
     <string name="botontienda">TODO</string>
     <string name="loguito">TODO</string>
     <string name="fotos">TODO</string>
+    <string name="home">Home</string>
+    <string name="ponies">PONIES</string>
+    <string name="galeria_fotos">GALERÍA DE FOTOS</string>
+    <string name="tienda">TIENDA</string>
+    <string name="nosotros">NOSOTROS</string>
+    <string name="reservar_clase">RESERVAR CLASE</string>
+    <string name="galeria_imagen">TODO</string>
+    <string name="admin">Admin</string>
+    <string name="menuimg">TODO</string>
+    <string name="menuimg2">TODO</string>
+    <string name="menuimg3">TODO</string>
+    <string name="menuimg4">TODO</string>
 
 </resources>
