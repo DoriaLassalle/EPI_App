@@ -44,7 +44,7 @@ class AdminAdapter : RecyclerView.Adapter<AdminAdapter.AdminViewHolder>(){
         holder.edadAlum.text=newAlum.age.toString()
         holder.correoAlum.text=newAlum.email
         holder.apoderAlum.text=newAlum.apoderado
-        if (newAlum.name.equals(true)){
+        if (newAlum.experience==true){
             holder.expeAlum.text=("Con Experiencia")
         }else{
             holder.expeAlum.text=("Sin Experiencia")

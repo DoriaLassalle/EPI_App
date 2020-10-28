@@ -9,23 +9,30 @@ import com.example.epi_app.model.AlumnoRepository
 
 class AlumnoViewModel (application: Application): AndroidViewModel(application){
 
-   private val myAlumnoRepository: AlumnoRepository
+   private val myRepository: AlumnoRepository
 
     val allAlumno: LiveData<List<AlumnoEntity>>
 
 
     init {
         val dao= getDataBase(application).alumnoDao()
-        myAlumnoRepository= AlumnoRepository(dao)    //comunico dao con repository
-        allAlumno=myAlumnoRepository.allAlumnosLiveData
+        val dao2= getDataBase(application).ponyDao()
+        myRepository= AlumnoRepository(dao, dao2)  //comunico dao con repository
+
+        allAlumno=myRepository.allAlumnosLiveData
     }
 
+
+
     fun insert(student: AlumnoEntity){
-        myAlumnoRepository.insertStudents(student)
+        myRepository.insertStudents(student)
     }
 
     fun getAlumnos(){
-         myAlumnoRepository.getAlumnos()
+         myRepository.getAlumnos()
+    }
+    fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
+        return myRepository.validateUser(correo, contras)
     }
 
 

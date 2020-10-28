@@ -15,6 +15,9 @@ interface AlumnoDao {
     @Query ("SELECT * FROM AlumnoEntity")
     fun getAllAlumnos(): LiveData<List<AlumnoEntity>>
 
+    @Query ("SElECT * FROM AlumnoEntity WHERE email=:correo AND password=:contras")
+    fun validateUser(correo: String, contras: String): LiveData<AlumnoEntity>
+
 
 
 

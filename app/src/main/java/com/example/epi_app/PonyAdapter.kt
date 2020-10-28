@@ -32,7 +32,7 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
        val newPony=ponyList[position]
 
         //holder.imgPony.text= newPony.image   es una imagen no se que poner aqui
-        holder.namePony.text=newPony.nameP
+       // holder.namePony.text=newPony
     }
 
     override fun getItemCount()= ponyList.size

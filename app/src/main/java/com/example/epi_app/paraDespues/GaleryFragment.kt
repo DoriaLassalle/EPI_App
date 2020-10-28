@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.epi_app.R
+import kotlinx.android.synthetic.main.fragment_galery.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class GaleryFragment : Fragment() {
 
 
+    lateinit var mAdapter: GalleryAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
@@ -27,8 +32,19 @@ class GaleryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val recyclerView=recyclerGallery
+        recyclerView.layoutManager=LinearLayoutManager(context)
+        recyclerView.adapter=mAdapter
+        mAdapter.updateAdapter(getData())
+
+
         botGallery.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_galeryFragment)
         }
+    }
+
+    fun getData():List<String>{
+        val list= listOf<String>("a1", "clase0","clase1")
+        return list
     }
 }
