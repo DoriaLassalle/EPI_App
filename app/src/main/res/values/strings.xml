@@ -50,5 +50,12 @@
     <string name="menuimg2">TODO</string>
     <string name="menuimg3">TODO</string>
     <string name="menuimg4">TODO</string>
+    <string name="tv1">TextView</string>
+    <string name="tv2">TextView</string>
+    <string name="back">Volver</string>
+    <string name="ponyindividual">TODO</string>
+    <string name="tv3">TextView</string>
+    <string name="backTogallery">Volver a la Galería</string>
+    <string name="itemGallery">TODO</string>
 
 </resources>

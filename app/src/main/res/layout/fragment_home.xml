@@ -19,12 +19,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crushed"
+            android:text="xx"/>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cvClase"
             android:layout_width="350dp"
-            android:layout_height="110dp"
+            android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="60dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
@@ -33,8 +44,8 @@
 
             <ImageView
                 android:id="@+id/reservarClase"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -57,9 +68,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvPony"
             android:layout_width="350dp"
-            android:layout_height="110dp"
+            android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
@@ -68,8 +79,8 @@
 
             <ImageView
                 android:id="@+id/ponyView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -91,9 +102,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvGallery"
             android:layout_width="350dp"
-            android:layout_height="110dp"
+            android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
@@ -102,8 +113,8 @@
 
             <ImageView
                 android:id="@+id/galleryView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -125,9 +136,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvTienda"
             android:layout_width="350dp"
-            android:layout_height="110dp"
+            android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
@@ -136,8 +147,8 @@
 
             <ImageView
                 android:id="@+id/tiendaView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -159,9 +170,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvNosotros"
             android:layout_width="350dp"
-            android:layout_height="110dp"
+            android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
@@ -170,8 +181,8 @@
 
             <ImageView
                 android:id="@+id/team"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"

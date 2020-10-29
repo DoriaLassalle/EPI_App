@@ -1,20 +1,13 @@
 package com.example.epi_app
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_team.*
-import kotlinx.android.synthetic.main.team_list.view.*
 
 class TeamFragment : Fragment() {
 
@@ -41,7 +34,6 @@ class TeamFragment : Fragment() {
             findNavController().navigate(R.id.action_teamFragment_to_HomeFragment)
         }
 
-
         val recyclerView=recyclerTeam
         recyclerView.layoutManager=LinearLayoutManager(context)
         recyclerView.adapter=myAdapter
@@ -50,12 +42,12 @@ class TeamFragment : Fragment() {
     }
 
     fun getData():List<Team>{
-
         val teamList:ArrayList<Team> = ArrayList()
 
-        teamList.add(Team("Sharon Lassalle", "Master Profe", R.drawable.sha, "Bla bla bla bla bla "))
-        teamList.add(Team("Tomás Van Cauwelaert", "Profe", R.drawable.tom, "bla bla"))
-        teamList.add(Team("Jean-Pierre Lassalle", "Profe", R.drawable.jp, "bla bla bla"))
+        teamList.add(Team("SHARON LASSALLE C.", "Master Profe", R.drawable.sha, "Equitadora de no se cuando," +
+                " Domadora de potros chúcaros y tierna profe de niñitos "))
+        teamList.add(Team("TOMÁS VAN CAUWELAERT", "Profe", R.drawable.tom, "bla bla"))
+        teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profe", R.drawable.jp, "bla bla bla"))
 
         return teamList
 
