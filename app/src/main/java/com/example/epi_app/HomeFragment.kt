@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_team.*
 
 
 class HomeFragment : Fragment() {
@@ -40,5 +41,12 @@ class HomeFragment : Fragment() {
 
             findNavController().navigate(R.id.action_HomeFragment_to_adminFragment)
         }
+
+        cvNosotros.setOnClickListener{
+
+            findNavController().navigate(R.id.action_HomeFragment_to_teamFragment)
+        }
+
+
     }
 }

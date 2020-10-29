@@ -49,7 +49,7 @@
                 android:id="@+id/ivTeamPhoto"
                 tools:src="@tools:sample/avatars"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_height="278dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitCenter" />
 
