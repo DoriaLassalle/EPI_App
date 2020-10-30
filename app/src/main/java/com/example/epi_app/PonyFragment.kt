@@ -10,20 +10,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.epi_app.model.netw.PonyApi
-import com.example.epi_app.model.network.Hit
-import com.example.epi_app.model.network.Pony
-import com.example.epi_app.model.network.PonyRetrofitClient
-import com.example.epi_app.viewmodel.AlumnoViewModel
+import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_pony.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class PonyFragment : Fragment() {
 
-    private val myViewModel: AlumnoViewModel by activityViewModels()
+    private val myViewModel: EpiViewModel by activityViewModels()
 
     lateinit var  myAdapter: PonyAdapter
 

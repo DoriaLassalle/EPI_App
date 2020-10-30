@@ -1,15 +1,23 @@
 package com.example.epi_app
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_team.*
+import java.lang.Exception
 
 class TeamFragment : Fragment() {
+
+    private val myViewModel:EpiViewModel by activityViewModels()
 
     lateinit var myAdapter: TeamAdapter
 
@@ -34,23 +42,31 @@ class TeamFragment : Fragment() {
             findNavController().navigate(R.id.action_teamFragment_to_HomeFragment)
         }
 
+        botMailTo.setOnClickListener {
+            val recipient="sharon.lassalle@gmail.com"
+            sendEmail(recipient)
+        }
+
         val recyclerView=recyclerTeam
         recyclerView.layoutManager=LinearLayoutManager(context)
         recyclerView.adapter=myAdapter
-        myAdapter.updateAdapter(getData())
+        myAdapter.updateAdapter(myViewModel.getDataTeam())
 
     }
 
-    fun getData():List<Team>{
-        val teamList:ArrayList<Team> = ArrayList()
+    fun sendEmail(recipient: String){
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.data= Uri.parse("mailto:")
+        intent.type="text/plain"
+        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))
 
-        teamList.add(Team("SHARON LASSALLE C.", "Master Profe", R.drawable.sha, "Equitadora de no se cuando," +
-                " Domadora de potros chúcaros y tierna profe de niñitos "))
-        teamList.add(Team("TOMÁS VAN CAUWELAERT", "Profe", R.drawable.tom, "bla bla"))
-        teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profe", R.drawable.jp, "bla bla bla"))
-
-        return teamList
+        try {
+            startActivity(intent)
+        }catch (e: Exception){
+            Toast.makeText(context, "e.message", Toast.LENGTH_LONG).show()
+        }
 
     }
+
 
 }

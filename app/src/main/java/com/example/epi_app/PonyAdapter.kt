@@ -1,5 +1,6 @@
 package com.example.epi_app
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
     fun updateAdapter(myList: List<PonyEntity>){                 //actualizar el adapt
         ponyList=myList
         notifyDataSetChanged()
+        Log.d("listado", ponyList.size.toString())
     }
 
     inner class PonyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
@@ -41,6 +43,7 @@ class PonyAdapter: RecyclerView.Adapter<PonyAdapter.PonyViewHolder>() {
     }
 
     override fun getItemCount()= ponyList.size
+
 
 
 }

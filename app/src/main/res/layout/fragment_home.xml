@@ -28,18 +28,18 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:fontFamily="@font/crushed"
-            android:text="xx"/>
+            tools:text="bienvenida"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvClase"
             android:layout_width="350dp"
             android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="15dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            app:cardElevation="8dp"
             android:focusable="true">
 
             <ImageView
@@ -74,7 +74,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            app:cardElevation="8dp"
             android:focusable="true">
 
             <ImageView
@@ -108,7 +108,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            app:cardElevation="8dp"
             android:focusable="true">
 
             <ImageView
@@ -142,7 +142,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            app:cardElevation="8dp"
             android:focusable="true">
 
             <ImageView
@@ -176,7 +176,7 @@
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            app:cardElevation="8dp"
             android:focusable="true">
 
             <ImageView

@@ -10,13 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.epi_app.model.local.AlumnoEntity
-import com.example.epi_app.viewmodel.AlumnoViewModel
+import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
 
 
 class RegisterFragment : Fragment() {
 
-    private val myViewModel: AlumnoViewModel by activityViewModels()
+    private val myViewModel: EpiViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

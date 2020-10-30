@@ -3,9 +3,9 @@ package com.example.epi_app
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.epi_app.model.local.Team
 import kotlinx.android.synthetic.main.team_list.view.*
 
 class TeamAdapter: RecyclerView.Adapter<TeamAdapter.TeamViewHolder>(){
@@ -31,9 +31,7 @@ class TeamAdapter: RecyclerView.Adapter<TeamAdapter.TeamViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
-     /* val nombre=teamList[position].nombre
-        val cargo=teamList[position].cargo
-        val desc=teamList[position].descripcion*/
+
         val foto=teamList[position].imagen
 
         holder.itemNombre.text=teamList[position].nombre

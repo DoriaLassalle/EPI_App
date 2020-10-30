@@ -8,15 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.epi_app.viewmodel.AlumnoViewModel
+import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_admin.*
 
 
 class AdminFragment : Fragment() {
 
     lateinit var mAdapter: AdminAdapter
-    val mViewModel: AlumnoViewModel by activityViewModels()
+    val mViewModel: EpiViewModel by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,10 @@ class AdminFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        botAdminHome.setOnClickListener {
+            findNavController().navigate(R.id.action_adminFragment_to_HomeFragment)
+        }
 
 
         val mRecycler=recyclerAdmin

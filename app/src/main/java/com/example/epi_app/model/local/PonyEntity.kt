@@ -8,7 +8,9 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "pony")
 data class PonyEntity (
     @PrimaryKey
+    val id: Int,
     val largeImageURL: String,
     val likes: String
+
 )
 

@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_LoginFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_recuperarFragment"
+            app:destination="@id/recuperarFragment" />
     </fragment>
     <fragment
         android:id="@+id/RegisterFragment"
@@ -51,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/galeryFragment"
-        android:name="com.example.epi_app.paraDespues.GaleryFragment"
+        android:name="com.example.epi_app.GaleryFragment"
         android:label="fragment_galery"
         tools:layout="@layout/fragment_galery" >
         <action
@@ -108,5 +111,14 @@
         <action
             android:id="@+id/action_teamFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperarFragment"
+        android:name="com.example.epi_app.RecuperarFragment"
+        android:label="fragment_recuperar"
+        tools:layout="@layout/fragment_recuperar" >
+        <action
+            android:id="@+id/action_recuperarFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 </navigation>

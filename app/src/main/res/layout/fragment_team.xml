@@ -7,19 +7,33 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTeam"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="500dp" />
+
+    <ImageButton
+        android:id="@+id/botMailTo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:fontFamily="@font/crushed"
+        android:src="@drawable/ic_baseline_email_24"
+        android:contentDescription="@string/mail" />
 
     <Button
         android:id="@+id/botTeamHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="605dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
         android:fontFamily="@font/crushed"
-        android:textSize="24sp"
         android:text="@string/home"
-        />
-
+        android:textSize="24sp" />
 
 
 </FrameLayout>

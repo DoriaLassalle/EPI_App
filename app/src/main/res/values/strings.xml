@@ -57,5 +57,6 @@
     <string name="tv3">TextView</string>
     <string name="backTogallery">Volver a la Galería</string>
     <string name="itemGallery">TODO</string>
+    <string name="mail">TODO</string>
 
 </resources>
