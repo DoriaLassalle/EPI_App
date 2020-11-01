@@ -61,14 +61,11 @@
             android:hint="@string/nombre_caballos_disponibles"
             android:importantForAutofill="no" />
 
-        <EditText
-            android:id="@+id/nivelClase"
+
+        <Spinner
+            android:id="@+id/spinnerAdmminNivel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/nivel"
-            android:importantForAutofill="no" />
+            android:layout_height="45dp" />
 
 
     </LinearLayout>
