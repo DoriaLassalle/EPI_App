@@ -84,9 +84,12 @@
     <string name="nivel">Nivel</string>
     <string name="ver_mis_clases">ver mis clases</string>
     <string name="agendar_clase">agendar clase</string>
+    <string name="reservaste">RESERVASTE UNA CLASE PARA:</string>
+    <string name="clases_disponibles">CLASES DISPONIBLES</string>
+    <string name="tus_clases">TUS CLASES</string>
 
 
-        <string-array name="level_list">
+    <string-array name="level_list">
             <item>Elige Nivel de la clase:</item>
             <item>Baby Pony</item>
             <item>Prebásico</item>

@@ -34,6 +34,11 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         myAlumnoDao.getAllAlumnos()
     }
 
+    fun getAllClases():LiveData<List<ClaseEntity>>{
+        return myClaseDao.getAllClases()
+
+    }
+
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myAlumnoDao.validateUser(correo, contras)
     }
@@ -122,10 +127,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         return galleryList
     }
 
-    fun getNivelSpinnerData():List<String>{
-        val nivelList= listOf<String>("Baby Pony", "Prebásico", "Básico", "Intermedio Avanzado" )
-        return nivelList
-    }
+
 
 
 

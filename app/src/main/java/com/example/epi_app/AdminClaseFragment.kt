@@ -23,6 +23,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private val myViewModel :EpiViewModel by activityViewModels()
     var diaIngresado:Int=0
+    var mesIngresado:Int=0
     lateinit var level:String
 
 
@@ -45,7 +46,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
             findNavController().navigate(R.id.action_adminClaseFragment_to_adminFragment)
         }
 
-                // crear ArrayAdapter con el string array y yl default spinner layout
+                // crear ArrayAdapter con el string array y el default spinner layout
         context?.let {
             ArrayAdapter.createFromResource(
                 it, R.array.level_list,
@@ -67,7 +68,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
                 myViewModel.insertClass(
                     ClaseEntity(
-                        dia = diaIngresado.toString(),
+                        dia = ("${diaIngresado}/${mesIngresado}"),
                         hora = horaClase.text.toString(),
                         profesor = profeClase.text.toString(),
                         cupos = caballosClase.text.toString(),
@@ -89,6 +90,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         diaIngresado=day
+        mesIngresado=month
         datePickerAdmin.setText("Clase para el: $day/$month/$year")
     }
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

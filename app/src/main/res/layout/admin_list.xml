@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textColor="#000000"
-            android:fontFamily="@font/crushed"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="@string/textview7" />
 
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:fontFamily="@font/crushed"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="@string/textview7" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:fontFamily="@font/crushed"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="@string/textview7" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:fontFamily="@font/crushed"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="@string/textview7" />
 
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:fontFamily="@font/crushed"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="@string/textview7" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

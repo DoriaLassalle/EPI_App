@@ -70,7 +70,7 @@
                 android:id="@+id/tvTeamText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily="sans-serif-condensed-light"
                 android:text="@string/textview8"
                 android:textAlignment="center"
                 android:textSize="20sp"

@@ -3,6 +3,7 @@ package com.example.epi_app.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.epi_app.model.local.Team
 import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.AlumnoDataBase.Companion.getDataBase
@@ -15,6 +16,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
    private val myRepository: EpiRepository
 
     val allAlumno: LiveData<List<AlumnoEntity>>
+    val classSelected = MutableLiveData<ClaseEntity>()   //item seleccionado
 
 
     init {
@@ -24,6 +26,10 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         myRepository= EpiRepository(dao, dao2, dao3)  //comunico dao con repository
 
         allAlumno=myRepository.allAlumnosLiveData
+    }
+
+    fun classSelect(claseSel: ClaseEntity) {
+        classSelected.value = claseSel
     }
 
     fun insert(student: AlumnoEntity){
@@ -37,6 +43,12 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     fun getAlumnos(){
          myRepository.getAlumnos()
     }
+
+    fun getAllClases():LiveData<List<ClaseEntity>>{
+        return myRepository.getAllClases()
+    }
+
+
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myRepository.validateUser(correo, contras)
     }
