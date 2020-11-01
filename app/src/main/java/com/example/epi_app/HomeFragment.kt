@@ -40,6 +40,10 @@ class HomeFragment : Fragment() {
                 welcome.text=("HOLA ${it.name} ${it.lastName} :)")
             })*/
 
+        cvClase.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_reservarClaseFragment)
+        }
+
         cvGallery.setOnClickListener {
 
             findNavController().navigate((R.id.action_HomeFragment_to_galeryFragment))

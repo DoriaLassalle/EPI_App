@@ -6,59 +6,41 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
         android:orientation="vertical"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/adminNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/crushed"
-            android:text="@string/textview7" />
-
-
-        <TextView
-            android:id="@+id/adminCorreo"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
             android:fontFamily="@font/crushed"
-            android:text="@string/textview7" />
+            tools:text="detalle clase" />
 
         <TextView
-            android:id="@+id/adminEdad"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
             android:fontFamily="@font/crushed"
-            android:text="@string/textview7" />
+            tools:text="@string/profesor" />
 
         <TextView
-            android:id="@+id/adminApoderado"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#000000"
             android:fontFamily="@font/crushed"
-            android:text="@string/textview7" />
-
-
-        <TextView
-            android:id="@+id/adminExperiencia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/crushed"
-            android:text="@string/textview7" />
+            android:text="pony" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

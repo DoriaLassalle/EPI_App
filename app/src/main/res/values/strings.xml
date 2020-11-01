@@ -57,6 +57,31 @@
     <string name="tv3">TextView</string>
     <string name="backTogallery">Volver a la Galería</string>
     <string name="itemGallery">TODO</string>
-    <string name="mail">TODO</string>
+    <string name="email">TODO</string>
+    <string name="tv6">TextView</string>
+    <string name="textview7">TextView</string>
+    <string name="textview8">TextView</string>
+    <string name="phototeam">TODO</string>
+    <string name="guardarNueva">Guardar contraseña nueva</string>
+    <string name="repetirNueva">Repetir contraseña nueva</string>
+    <string name="contNueva">Contraseña nueva min 8 caracteres</string>
+    <string name="mailregistrado">Correo electrónico registrado</string>
+    <string name="chgPassword">CAMBIO DE CONTRASEÑA</string>
+    <string name="nombre">NOMBRE:</string>
+    <string name="apellido">APELLIDO:</string>
+    <string name="edad">EDAD:</string>
+    <string name="mail">CORREO:</string>
+    <string name="apoderado">APODERADO:</string>
+    <string name="guardar_clase">Guardar clase</string>
+    <string name="eliminar">eliminar</string>
+    <string name="guardar">guardar</string>
+    <string name="modificar">Modificar</string>
+    <string name="para_qu_d_a_es_la_clase">Para qué día es la clase?</string>
+    <string name="profesor">Profesor</string>
+    <string name="nombre_caballos_disponibles">Nombre caballos disponibles separados por (,)</string>
 
+    <string name="agregar_clases">AGREGAR CLASES</string>
+    <string name="nivel">Nivel</string>
+    <string name="ver_mis_clases">ver mis clases</string>
+    <string name="agendar_clase">agendar clase</string>
 </resources>

@@ -1,18 +1,21 @@
 package com.example.epi_app.model.local
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "clase")
 data class ClaseEntity (
-    @PrimaryKey
-    val id:Int,
+    @PrimaryKey(autoGenerate = true)
+    val id:Int=0,
     val dia: String,
     val hora: String,
     val profesor: String,
-    val cupos: Int,
-    val categoria: String
+    val cupos:String,       //val cupos: ArrayList<String>
+    val nivel: String,
+
+    //val nombreAlumno: AlumnoEntity   ForeignKey?
 )
 
 @Entity

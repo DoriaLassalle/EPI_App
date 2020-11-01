@@ -28,7 +28,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:fontFamily="@font/crushed"
-            tools:text="bienvenida"/>
+            tools:text="bienvenida"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvClase"
@@ -40,7 +41,8 @@
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/welcome">
 
             <ImageView
                 android:id="@+id/reservarClase"
@@ -75,7 +77,8 @@
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/cvClase">
 
             <ImageView
                 android:id="@+id/ponyView"
@@ -109,7 +112,8 @@
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/cvPony">
 
             <ImageView
                 android:id="@+id/galleryView"
@@ -143,7 +147,8 @@
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/cvGallery">
 
             <ImageView
                 android:id="@+id/tiendaView"
@@ -177,7 +182,8 @@
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/cvTienda">
 
             <ImageView
                 android:id="@+id/team"

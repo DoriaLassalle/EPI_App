@@ -41,6 +41,9 @@ class AdminFragment : Fragment() {
         botAdminHome.setOnClickListener {
             findNavController().navigate(R.id.action_adminFragment_to_HomeFragment)
         }
+        botAdminIngClase.setOnClickListener {
+            findNavController().navigate(R.id.action_adminFragment_to_adminClaseFragment)
+        }
 
 
         val mRecycler=recyclerAdmin

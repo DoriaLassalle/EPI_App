@@ -24,7 +24,8 @@
             android:text="@string/registro_de_nuevo_usuario"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/regNombre"
@@ -35,9 +36,9 @@
             android:layout_marginEnd="10dp"
             android:textSize="18sp"
             android:inputType="textPersonName"
-
             android:hint="@string/nombre_alumn"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/titulo"/>
 
         <EditText
             android:id="@+id/regApellido"
@@ -49,7 +50,8 @@
             android:textSize="18sp"
             android:inputType="textPersonName"
             android:hint="@string/apellido_alumn"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regNombre"/>
 
         <EditText
             android:id="@+id/regEdad"
@@ -61,7 +63,8 @@
             android:textSize="18sp"
             android:inputType="number"
             android:hint="@string/edad_s_lo_n_meros"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regApellido"/>
 
 
 
@@ -75,7 +78,8 @@
             android:textSize="18sp"
             android:inputType="textEmailAddress"
             android:hint="@string/correo_electr_nico"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regEdad"/>
 
         <EditText
             android:id="@+id/regPass"
@@ -87,7 +91,8 @@
             android:textSize="18sp"
             android:inputType="textPassword"
             android:hint="@string/contrase_a_min_8_caracteres"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regMail"/>
 
         <EditText
             android:id="@+id/regPass2"
@@ -99,7 +104,8 @@
             android:textSize="18sp"
             android:inputType="textPassword"
             android:hint="@string/repetir_contrase_a"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regPass"/>
 
         <EditText
             android:id="@+id/regApoderado"
@@ -111,7 +117,8 @@
             android:textSize="18sp"
             android:inputType="textPersonName"
             android:hint="@string/nombre_y_apellido_apoderado"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/regPass2"/>
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -122,7 +129,8 @@
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/crushed"
             android:text="@string/has_montado_antes"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/regApoderado"/>
 
         <Button
             android:id="@+id/btnGuardarDatos"
@@ -133,9 +141,10 @@
             android:layout_marginEnd="10dp"
             android:background="@drawable/btn_redondeado"
             android:fontFamily="@font/crushed"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
-            android:text="@string/guardar_datos" />
+            android:text="@string/guardar_datos"
+            app:layout_constraintTop_toBottomOf="@id/checkBox"/>
 
 
     </LinearLayout>

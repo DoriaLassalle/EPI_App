@@ -3,11 +3,7 @@ package com.example.epi_app.model
 
 import androidx.lifecycle.LiveData
 import com.example.epi_app.R
-import com.example.epi_app.model.local.Team
-import com.example.epi_app.model.local.AlumnoEntity
-import com.example.epi_app.model.local.AlumnoDao
-import com.example.epi_app.model.local.PonyDao
-import com.example.epi_app.model.local.PonyEntity
+import com.example.epi_app.model.local.*
 import com.example.epi_app.model.netw.PonyApi
 import com.example.epi_app.model.network.Hit
 import com.example.epi_app.model.network.Pony
@@ -19,7 +15,8 @@ import retrofit2.Call
 import retrofit2.Callback
 
 
-class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: PonyDao){ //instacio el dao
+class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: PonyDao,
+    private  val myClaseDao: ClaseDao){ //instacio el dao
 
     private val mRetrofit= PonyRetrofitClient.retrofitInstance()
 
@@ -27,6 +24,10 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     fun insertStudents(student: AlumnoEntity)= CoroutineScope(Dispatchers.IO).launch {
        myAlumnoDao.insertAlumno(student)
+    }
+
+    fun insertClass(clase: ClaseEntity)= CoroutineScope(Dispatchers.IO).launch {
+        myClaseDao.insertClase(clase)
     }
 
     fun getAlumnos()= CoroutineScope(Dispatchers.IO).launch {

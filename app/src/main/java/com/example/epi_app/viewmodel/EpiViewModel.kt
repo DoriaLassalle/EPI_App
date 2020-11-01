@@ -7,6 +7,7 @@ import com.example.epi_app.model.local.Team
 import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.AlumnoDataBase.Companion.getDataBase
 import com.example.epi_app.model.EpiRepository
+import com.example.epi_app.model.local.ClaseEntity
 import com.example.epi_app.model.local.PonyEntity
 
 class EpiViewModel (application: Application): AndroidViewModel(application){
@@ -19,13 +20,18 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     init {
         val dao= getDataBase(application).alumnoDao()
         val dao2= getDataBase(application).ponyDao()
-        myRepository= EpiRepository(dao, dao2)  //comunico dao con repository
+        val dao3= getDataBase(application).claseDao()
+        myRepository= EpiRepository(dao, dao2, dao3)  //comunico dao con repository
 
         allAlumno=myRepository.allAlumnosLiveData
     }
 
     fun insert(student: AlumnoEntity){
         myRepository.insertStudents(student)
+    }
+
+    fun insertClass(clase :ClaseEntity){
+        myRepository.insertClass(clase)
     }
 
     fun getAlumnos(){

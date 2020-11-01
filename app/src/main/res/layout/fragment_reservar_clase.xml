@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReservarClaseFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="541dp"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/titulo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/crushed"
+            android:text="@string/reservar_clase"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerClaseDisp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+
+            />
+
+        <Spinner
+            android:id="@+id/spinnerPonyDisp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerReserva"
+            android:layout_width="match_parent"
+            android:layout_height="343dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botAgendarClase"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/agendar_clase"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/botPagarClase"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="pagar clases"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/botClaseHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="605dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:fontFamily="@font/crushed"
+        android:text="@string/home"
+        android:textSize="20sp"
+       />
+
+</FrameLayout>

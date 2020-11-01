@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_teamFragment"
             app:destination="@id/teamFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_reservarClaseFragment"
+            app:destination="@id/reservarClaseFragment" />
     </fragment>
     <fragment
         android:id="@+id/galeryFragment"
@@ -102,6 +105,9 @@
         <action
             android:id="@+id/action_adminFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_adminClaseFragment"
+            app:destination="@id/adminClaseFragment" />
     </fragment>
     <fragment
         android:id="@+id/teamFragment"
@@ -120,5 +126,23 @@
         <action
             android:id="@+id/action_recuperarFragment_to_LoginFragment"
             app:destination="@id/LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminClaseFragment"
+        android:name="com.example.epi_app.AdminClaseFragment"
+        android:label="fragment_admin_clase"
+        tools:layout="@layout/fragment_admin_clase" >
+        <action
+            android:id="@+id/action_adminClaseFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservarClaseFragment"
+        android:name="com.example.epi_app.ReservarClaseFragment"
+        android:label="fragment_reservar_clase"
+        tools:layout="@layout/fragment_reservar_clase" >
+        <action
+            android:id="@+id/action_reservarClaseFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
 </navigation>

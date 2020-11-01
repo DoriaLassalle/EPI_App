@@ -19,54 +19,58 @@
             android:id="@+id/titulo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/crushed"
-            android:text="CAMBIO DE CONTRASEÑA"
+            android:text="@string/chgPassword"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="80dp"/>
+            android:layout_height="80dp" />
 
-     
+
         <EditText
             android:id="@+id/recupMailRegist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:textSize="18sp"
+            android:hint="@string/mailregistrado"
+            android:importantForAutofill="no"
             android:inputType="textEmailAddress"
-            android:hint="Correo electrónico registrado"
-            android:importantForAutofill="no" />
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/titulo2" />
 
         <EditText
             android:id="@+id/chgPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:textSize="18sp"
+            android:hint="@string/contNueva"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
-            android:hint="Contraseña nueva min 8 caracteres"
-            android:importantForAutofill="no" />
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/recupMailRegist" />
 
         <EditText
             android:id="@+id/chgPass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:textSize="18sp"
+            android:hint="@string/repetirNueva"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
-            android:hint="Repetir contraseña nueva"
-            android:importantForAutofill="no" />
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/chgPass" />
 
-         
 
         <Button
             android:id="@+id/botCambiarPassword"
@@ -77,9 +81,10 @@
             android:layout_marginEnd="10dp"
             android:background="@drawable/btn_redondeado"
             android:fontFamily="@font/crushed"
-            android:textSize="18sp"
+            android:text="@string/guardarNueva"
             android:textColor="#FFFFFF"
-            android:text="Guardar contraseña nueva" />
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/chgPass2" />
 
 
     </LinearLayout>

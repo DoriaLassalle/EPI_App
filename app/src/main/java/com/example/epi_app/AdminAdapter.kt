@@ -20,12 +20,11 @@ class AdminAdapter : RecyclerView.Adapter<AdminAdapter.AdminViewHolder>(){
 
     inner class AdminViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var nombAlum = itemView.adminNombre  //id del textview a mostrar en el recycler
-        var apellAlum = itemView.adminApellido
+        //var apellAlum = itemView.adminApellido
         var edadAlum = itemView.adminEdad
         var correoAlum = itemView.adminCorreo
         var apoderAlum = itemView.adminApoderado
         var expeAlum = itemView.adminExperiencia
-
 
     }
 
@@ -39,11 +38,10 @@ class AdminAdapter : RecyclerView.Adapter<AdminAdapter.AdminViewHolder>(){
     override fun onBindViewHolder(holder: AdminAdapter.AdminViewHolder, position: Int) {
         val newAlum=alumnoList[position]
 
-        holder.nombAlum.text=newAlum.name
-        holder.apellAlum.text=newAlum.lastName
-        holder.edadAlum.text=newAlum.age.toString()
-        holder.correoAlum.text=newAlum.email
-        holder.apoderAlum.text=newAlum.apoderado
+        holder.nombAlum.text=("NOMBRE: ${newAlum.name} ${newAlum.lastName}")
+        holder.edadAlum.text=("EDAD: ${newAlum.age.toString()}")
+        holder.correoAlum.text=("CORREO: ${newAlum.email}")
+        holder.apoderAlum.text=("APODERADO: ${newAlum.apoderado}")
         if (newAlum.experience==true){
             holder.expeAlum.text=("Con Experiencia")
         }else{

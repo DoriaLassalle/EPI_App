@@ -3,12 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AdminFragment">
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/crushed"
+        android:text="ALUMNOS REGISTRADOS"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAdmin"
         android:layout_width="match_parent"
-        android:layout_height="450dp" />
+        android:layout_height="450dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/botAdminIngClase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="Ingresar clase"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerAdmin"/>
 
     <Button
         android:id="@+id/botAdminHome"
@@ -17,6 +44,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="500dp"
-        android:text="Button" />
+        android:layout_marginTop="605dp"
+        android:text="@string/home"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerAdmin"/>
 </FrameLayout>

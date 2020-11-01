@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AdminClaseFragment">
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="541dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titulo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/crushed"
+            android:text="@string/agregar_clases"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/datePickerAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="@string/para_qu_d_a_es_la_clase"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/horaClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Hora de la Clase"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/profeClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/profesor"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/caballosClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/nombre_caballos_disponibles"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/nivelClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/nivel"
+            android:importantForAutofill="no" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botEliminarClase"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/eliminar"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/botGuardarClase"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/guardar"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/botModificarClase"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/modificar"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/botAdminBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="605dp"
+        android:text="@string/back"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+
+
+</FrameLayout>

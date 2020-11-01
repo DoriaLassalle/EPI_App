@@ -18,14 +18,15 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewLogo"
             android:layout_width="350dp"
             android:layout_height="350dp"
             android:layout_gravity="center"
             android:layout_marginTop="-20dp"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logosplash" />
+            app:srcCompat="@drawable/logosplash"
+            />
 
         <EditText
             android:id="@+id/loginMail"
@@ -37,7 +38,8 @@
             android:ems="10"
             android:hint="@string/ingresa_tu_correo"
             android:importantForAutofill="no"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogo"/>
 
         <EditText
             android:id="@+id/loginPassword"
@@ -49,7 +51,8 @@
             android:ems="10"
             android:hint="@string/contrase_a"
             android:inputType="textPassword"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            app:layout_constraintTop_toBottomOf="@id/loginMail"/>
 
         <Button
             android:id="@+id/btnIngresar"
@@ -59,10 +62,11 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/crushed"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="@drawable/btn_redondeado"
-            android:text="@string/ingresar" />
+            android:text="@string/ingresar"
+            app:layout_constraintTop_toBottomOf="@id/loginPassword"/>
 
         <Button
             android:id="@+id/btnRegistrar"
@@ -72,10 +76,11 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/crushed"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="@drawable/btn_redondeado"
-            android:text="@string/registrarme_como_usuario" />
+            android:text="@string/registrarme_como_usuario"
+            app:layout_constraintTop_toBottomOf="@id/btnIngresar"/>
 
         <TextView
             android:id="@+id/recuperar"
@@ -89,7 +94,8 @@
             android:fontFamily="@font/crushed"
             android:textColor="#950206"
             android:textIsSelectable="true"
-            android:textSize="18sp" />
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/btnRegistrar"/>
 
 
     </LinearLayout>

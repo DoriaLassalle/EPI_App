@@ -1,21 +1,18 @@
 package com.example.epi_app.model.local
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface ClaseDao {
 
-    @Insert
-    fun insertClases()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertClase(clase:ClaseEntity)
 
     @Query("SELECT * FROM clase")
-    fun getAllClases()
+    fun getAllClases():LiveData<List<ClaseEntity>>
 
-    @Query("SELECT cupos FROM clase")
-    fun getCupos()
+
 
 
 

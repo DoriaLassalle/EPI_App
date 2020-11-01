@@ -5,11 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [AlumnoEntity::class, PonyEntity::class],  version = 1)
+@Database(entities = [AlumnoEntity::class, PonyEntity::class, ClaseEntity::class],  version = 1)
  abstract class AlumnoDataBase: RoomDatabase() {
 
     abstract fun alumnoDao(): AlumnoDao
     abstract fun ponyDao():PonyDao
+    abstract fun claseDao():ClaseDao
 
     companion object {
         @Volatile
@@ -24,7 +25,7 @@ import androidx.room.RoomDatabase
 
             synchronized(this) {
                 val instance = Room.databaseBuilder(context, AlumnoDataBase::class.java,
-                    "ter_db").build()
+                    "quin_db").build()
                 INSTANCE = instance
                 return instance
             }
