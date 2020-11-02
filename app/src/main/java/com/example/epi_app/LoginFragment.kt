@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
+import java.util.Observer
 
 
 class LoginFragment : Fragment() {
@@ -32,27 +34,28 @@ class LoginFragment : Fragment() {
         }
 
         btnIngresar.setOnClickListener {
-          /*  if (loginMail.text.isBlank() || loginPassword.text.isBlank()) {
+            if (loginMail.text.isBlank() || loginPassword.text.isBlank()) {
 
                 Toast.makeText(context, "COMPLETA AMBOS CAMPOS", Toast.LENGTH_LONG).show()
 
             } else {
 
                 myViewModel.validateUser(loginMail.text.toString(), loginPassword.text.toString())
-                    .observe(viewLifecycleOwner, Observer {
+                    .observe(viewLifecycleOwner, androidx.lifecycle.Observer{
                         if (it == null) {
                             Toast.makeText(context, "DATOS USUARIO INVÁLIDOS", Toast.LENGTH_LONG)
                                 .show()
                         } else {
 
-                            Toast.makeText(context,"BIENVENIDO ${it.name}" ,
-                                Toast.LENGTH_LONG).show()
+                            myViewModel.select(it.email)
 
+
+                            findNavController().navigate(R.id.action_LoginFragment_to_HomeFragment)
 
                         }
                     })
-            }*/
-            findNavController().navigate(R.id.action_LoginFragment_to_HomeFragment)
+            }
+
         }
 
         recuperar.setOnClickListener {

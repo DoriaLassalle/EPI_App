@@ -25,7 +25,7 @@ import androidx.room.RoomDatabase
 
             synchronized(this) {
                 val instance = Room.databaseBuilder(context, AlumnoDataBase::class.java,
-                    "quin_db").build()
+                    "sexta_db").build()
                 INSTANCE = instance
                 return instance
             }

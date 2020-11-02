@@ -1,8 +1,6 @@
 package com.example.epi_app.model.local
 
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 
 @Entity(tableName = "clase")
@@ -14,9 +12,29 @@ data class ClaseEntity (
     val profesor: String,
     val cupos:String,       //val cupos: ArrayList<String>
     val nivel: String,
+    val alumnoEmailId:String
 
-    //val nombreAlumno: AlumnoEntity   ForeignKey?
 )
+
+{constructor(alumnoEmailId: String): this(0,"","","","","",alumnoEmailId)
+
+    constructor(dia: String, hora: String, profesor: String, cupos: String, nivel: String): this(0,dia,
+    hora, profesor, cupos, nivel, "")
+
+}
+
+
+
+data class RelationAlumnoClase(
+    @Embedded val alumno: AlumnoEntity,
+    @Relation(
+        parentColumn = "email",
+        entityColumn = "alumnoEmailId"
+    )
+    val claseAlumnoList:List<ClaseEntity>
+
+)
+
 
 @Entity
 data class Profesor(

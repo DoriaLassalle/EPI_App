@@ -4,12 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.epi_app.model.local.Team
-import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.AlumnoDataBase.Companion.getDataBase
 import com.example.epi_app.model.EpiRepository
-import com.example.epi_app.model.local.ClaseEntity
-import com.example.epi_app.model.local.PonyEntity
+import com.example.epi_app.model.local.*
 
 class EpiViewModel (application: Application): AndroidViewModel(application){
 
@@ -17,6 +14,8 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     val allAlumno: LiveData<List<AlumnoEntity>>
     val classSelected = MutableLiveData<ClaseEntity>()   //item seleccionado
+    val selectedRecibir = MutableLiveData<String>()
+
 
 
     init {
@@ -30,6 +29,10 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     fun classSelect(claseSel: ClaseEntity) {
         classSelected.value = claseSel
+    }
+
+    fun select(item: String) {
+        selectedRecibir.value = item
     }
 
     fun insert(student: AlumnoEntity){
@@ -48,10 +51,16 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         return myRepository.getAllClases()
     }
 
+    fun getAlumnoWithClase():LiveData<List<RelationAlumnoClase>>{
+        return myRepository.getAlumnoWithClase()
+    }
+
 
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myRepository.validateUser(correo, contras)
     }
+
+
     fun validateMail(mail:String):LiveData<AlumnoEntity>{
         return myRepository.validateMail(mail)
     }
@@ -63,6 +72,11 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     fun getDataTeam(): List<Team> {
         return myRepository.getDataTeam()
+
+    }
+
+    fun getDataTienda():List<Tienda>{
+        return myRepository.getDataTienda()
 
     }
 

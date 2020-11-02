@@ -39,7 +39,13 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     }
 
+    fun getAlumnoWithClase():LiveData<List<RelationAlumnoClase>>{
+        return myClaseDao.getAlumnoWithClase()
+
+    }
+
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
+
         return myAlumnoDao.validateUser(correo, contras)
     }
 
@@ -110,13 +116,53 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         val teamList:ArrayList<Team> = ArrayList()
 
         teamList.add(
-            Team("SHARON LASSALLE C.", "Master Profe", R.drawable.sha, "Equitadora de no se cuando," +
-                " Domadora de potros chúcaros y tierna profe de niñitos ")
-        )
-        teamList.add(Team("TOMÁS VAN CAUWELAERT", "Profe", R.drawable.tom, "bla bla"))
-        teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profe", R.drawable.jp, "bla bla bla"))
+            Team("SHARON LASSALLE C.", "Profesora Titular\nTodos los niveles", R.drawable.sha,
+                "Jinete desde muy pequeña," +
+                    "\nha conocido y pacticado Enduro, Salto y Adiestramiento, Prueba Completa,\nRinning, etc." +
+                    "\nFue Masajista Equino y Amansadora\nde caballos.\nFundadora de la EPI y encargada de la " +
+                    "administración de clases y horarios.\nCertificada como Profesora de Equitación Nivel Básico " +
+                    "FECH.\nCertificación Internacional FEF,\nGalope Nivel 6.\nEn proceso de certificación Coach " +
+                    "FEI."))
+        teamList.add(Team("TOMÁS VAN CAUWELAERT", "Profesor Titular\nTodos los niveles", R.drawable.tom,
+            "Jinete desde muy pequeño, su interés se inclina 100% a la rama de adiestramiento." +
+                    "\nEn proceso de formación Coach FEI."))
+        teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profesor Ayudante\n Desde 2016", R.drawable.jp,
+            "Desde muy pequeño ligado a la naturaleza, el campo y los caballos.\nMejor amigo de" +
+                    "Cururo.\nActualmente termina su carrera de Ingeniero en Biotecnología, por eso sólo lo " +
+                    "vemos los fines de semana."))
+        teamList.add(
+            Team("JORGE NEGRETE", "Ordenanza\nEn la EPI desde 2016", R.drawable.jorge,
+        "Encargado de cuidar a nuestros Ponies y Caballos, tenerlos bien alimentados, limpios" +
+                "y felices."))
+        /*teamList.add(Team("Daniela", "Especialista en Barefooting Equino", R.drawable,
+        "Mantiene los cascos de nuestros Ponies y Caballos sanos, bien despalmados, aplomados y " +
+                "sin herraduras."))
+        teamList.add(Team("Consuelo Bittner", "Veterinaria", R.drawable, "Veterinaria" +
+                "favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
+                "sea pequeño."))
+        teamList.add(Team("Dominique Sunko", "Veterinaria", R.drawable, "Veterinaria " +
+                "amiga de todos los Ponies y Caballos.\nEncargada de sus desparasitaciones , vacunas" +
+                "reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))*/
 
         return teamList
+
+    }
+
+    fun getDataTienda():List<Tienda>{
+        val tiendaList:ArrayList<Tienda> = ArrayList()
+
+        tiendaList.add(Tienda(R.drawable.tcasco1, "CASCO AJUSTABLE NEGRO", 42000))
+        tiendaList.add(Tienda(R.drawable.tcasco2, "CASCO ALTA RESISTENCIA", 48000))
+        tiendaList.add(Tienda(R.drawable.tmandilnegro, "MANDIL DE SALTO NEGRO", 27000))
+        tiendaList.add(Tienda(R.drawable.tmandilrojo, "MANDIL DE SALTO ROJO", 27000))
+        tiendaList.add(Tienda(R.drawable.tamigurumi, "AMIGURUMI LLAVERO", 8000))
+        tiendaList.add(Tienda(R.drawable.tcinchaguatero, "CINCHA GUATERO", 170000))
+        tiendaList.add(Tienda(R.drawable.tpolainanegra, "POLAINA ADULTO NEGRO", 49000))
+        tiendaList.add(Tienda(R.drawable.tpolainarosa,"POLAINA NIÑA ROSA", 35000))
+        tiendaList.add(Tienda(R.drawable.tglove, "GUANTES DE RENO", 25000))
+
+        return tiendaList
+
 
     }
 

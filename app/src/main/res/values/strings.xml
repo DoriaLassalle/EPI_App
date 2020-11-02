@@ -90,12 +90,12 @@
 
 
     <string-array name="level_list">
-            <item>Elige Nivel de la clase:</item>
-            <item>Baby Pony</item>
-            <item>Prebásico</item>
-            <item>Básico</item>
-            <item>Intermedio Avanzado</item>
+        <item>Elige Nivel de la clase:</item>
+        <item>Baby Pony</item>
+        <item>Prebásico</item>
+        <item>Básico</item>
+        <item>Intermedio Avanzado</item>
 
-        </string-array>
+    </string-array>
 
 </resources>

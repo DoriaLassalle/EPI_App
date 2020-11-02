@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_epiPonyFragment"
             app:destination="@id/epiPonyFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_tiendaFragment"
+            app:destination="@id/tiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/epiPonyFragment"
@@ -144,6 +147,15 @@
         tools:layout="@layout/fragment_reservar_clase" >
         <action
             android:id="@+id/action_reservarClaseFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="com.example.epi_app.TiendaFragment"
+        android:label="fragment_tienda"
+        tools:layout="@layout/fragment_tienda" >
+        <action
+            android:id="@+id/action_tiendaFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
     </fragment>
 </navigation>

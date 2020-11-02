@@ -18,6 +18,8 @@ class HomeFragment : Fragment() {
 
     private val myViewModel: EpiViewModel by activityViewModels()
 
+    lateinit var usuarioRegistrado:String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,12 +37,17 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*myViewModel.validateUser(loginMail.text.toString(), loginPassword.text.toString())
-            .observe(viewLifecycleOwner, Observer {
-                welcome.text=("HOLA ${it.name} ${it.lastName} :)")
-            })*/
+
+
+
+
+        //welcome.text=("HOLA ${it.name} ${it.lastName} :)")
+
+
 
         cvClase.setOnClickListener {
+
+
             findNavController().navigate(R.id.action_HomeFragment_to_reservarClaseFragment)
         }
 
@@ -53,6 +60,11 @@ class HomeFragment : Fragment() {
         cvPony.setOnClickListener {
 
             findNavController().navigate(R.id.action_HomeFragment_to_ponyFragment)
+        }
+
+        cvTienda.setOnClickListener {
+
+            findNavController().navigate(R.id.action_HomeFragment_to_tiendaFragment)
         }
 
         botAdmin.setOnClickListener {
