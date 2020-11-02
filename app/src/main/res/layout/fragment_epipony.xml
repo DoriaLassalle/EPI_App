@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".GaleryFragment">
+    tools:context=".EpiPonyFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +24,7 @@
         android:background="@drawable/btn_redondeado"
         android:fontFamily="@font/crushed"
         android:textSize="20sp"
-        android:text="Home"
+        android:text="@string/home"
         app:layout_constraintTop_toBottomOf="@id/recyclerGallery"/>
 
 </FrameLayout>

@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
 
         cvGallery.setOnClickListener {
 
-            findNavController().navigate((R.id.action_HomeFragment_to_galeryFragment))
+            findNavController().navigate((R.id.action_HomeFragment_to_epiPonyFragment))
         }
 
 

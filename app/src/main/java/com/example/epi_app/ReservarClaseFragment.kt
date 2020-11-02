@@ -52,9 +52,6 @@ class ReservarClaseFragment : Fragment(), ClaseAdapter.PassData{
 
         })
 
-
-
-
         botPagarClase.setOnClickListener {
                 Toast.makeText(context, "OPCIÓN NO HABILITADA AÚN :(", Toast.LENGTH_LONG).show()
         }

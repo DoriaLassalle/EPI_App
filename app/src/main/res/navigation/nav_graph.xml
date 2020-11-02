@@ -37,11 +37,9 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_HomeFragment_to_galeryFragment"
-            app:destination="@id/galeryFragment" />
-        <action
             android:id="@+id/action_HomeFragment_to_ponyFragment"
             app:destination="@id/ponyFragment" />
+
         <action
             android:id="@+id/action_HomeFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
@@ -54,18 +52,21 @@
         <action
             android:id="@+id/action_HomeFragment_to_reservarClaseFragment"
             app:destination="@id/reservarClaseFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_epiPonyFragment"
+            app:destination="@id/epiPonyFragment" />
     </fragment>
     <fragment
-        android:id="@+id/galeryFragment"
-        android:name="com.example.epi_app.GaleryFragment"
+        android:id="@+id/epiPonyFragment"
+        android:name="com.example.epi_app.EpiPonyFragment"
         android:label="fragment_galery"
-        tools:layout="@layout/fragment_galery" >
+        tools:layout="@layout/fragment_epipony" >
         <action
-            android:id="@+id/action_galeryFragment_to_HomeFragment"
+            android:id="@+id/action_epiPonyFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
         <action
-            android:id="@+id/action_galeryFragment_to_itemGalleryFragment"
-            app:destination="@id/itemGalleryFragment" />
+            android:id="@+id/action_EpiPonyFragment_to_itemPonyFragment"
+            app:destination="@id/itemPonyFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemGalleryFragment"
@@ -73,8 +74,8 @@
         android:label="fragment_item_gallery"
         tools:layout="@layout/fragment_item_gallery" >
         <action
-            android:id="@+id/action_itemGalleryFragment_to_galeryFragment"
-            app:destination="@id/galeryFragment" />
+            android:id="@+id/action_itemGalleryFragment_to_ponyFragment"
+            app:destination="@id/ponyFragment" />
     </fragment>
     <fragment
         android:id="@+id/ponyFragment"
@@ -85,17 +86,17 @@
             android:id="@+id/action_ponyFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
         <action
-            android:id="@+id/action_ponyFragment_to_itemPonyFragment"
-            app:destination="@id/itemPonyFragment" />
+            android:id="@+id/action_ponyFragment_to_itemGalleyFragment"
+            app:destination="@id/itemGalleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemPonyFragment"
-        android:name="com.example.epi_app.paraDespues.ItemPonyFragment"
+        android:name="com.example.epi_app.ItemPonyFragment"
         android:label="fragment_item_pony"
-        tools:layout="@layout/fragment_item_pony" >
+        tools:layout="@layout/fragment_item_epipony" >
         <action
-            android:id="@+id/action_itemPonyFragment_to_ponyFragment"
-            app:destination="@id/ponyFragment" />
+            android:id="@+id/action_itemPonyFragment_to_epiPonyFragment"
+            app:destination="@id/epiPonyFragment" />
     </fragment>
     <fragment
         android:id="@+id/adminFragment"

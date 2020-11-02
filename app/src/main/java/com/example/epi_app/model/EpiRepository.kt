@@ -54,7 +54,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
     fun getPonyPhotoFromApi() = CoroutineScope(Dispatchers.IO).launch {
 
         val key=Pair("key", "18827506-60fd5dd04e7ef2793d6e76d76")
-        val param= Pair("q", "pony")                    //aqui le pasamos  el tag
+        val param= Pair("q", "horse")                    //aqui le pasamos  el tag
         val map = mapOf(key, param)
 
         val instancia: PonyApi = PonyRetrofitClient.retrofitInstance()
