@@ -19,7 +19,7 @@ data class ClaseEntity (
 {constructor(alumnoEmailId: String): this(0,"","","","","",alumnoEmailId)
 
     constructor(dia: String, hora: String, profesor: String, cupos: String, nivel: String): this(0,dia,
-    hora, profesor, cupos, nivel, "")
+    hora, profesor, cupos, nivel,"")
 
 }
 

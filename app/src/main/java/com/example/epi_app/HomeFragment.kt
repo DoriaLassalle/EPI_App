@@ -38,9 +38,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
-
         //welcome.text=("HOLA ${it.name} ${it.lastName} :)")
 
 

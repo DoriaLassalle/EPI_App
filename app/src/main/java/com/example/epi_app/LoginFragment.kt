@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 import java.util.Observer
@@ -16,6 +17,7 @@ import java.util.Observer
 class LoginFragment : Fragment() {
 
     val myViewModel: EpiViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

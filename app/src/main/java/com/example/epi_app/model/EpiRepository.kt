@@ -18,8 +18,8 @@ import retrofit2.Callback
 class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: PonyDao,
     private  val myClaseDao: ClaseDao){ //instacio el dao
 
-    private val mRetrofit= PonyRetrofitClient.retrofitInstance()
 
+    private val mRetrofit= PonyRetrofitClient.retrofitInstance()
     val allAlumnosLiveData=myAlumnoDao.getAllAlumnos()   //live data con  lo de la tabla
 
     fun insertStudents(student: AlumnoEntity)= CoroutineScope(Dispatchers.IO).launch {

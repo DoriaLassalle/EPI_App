@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -35,6 +35,15 @@
             tools:text="@string/profesor" />
 
         <TextView
+            android:id="@+id/nivelReservado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="pony" />
+
+        <TextView
             android:id="@+id/ponyReservado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,5 +51,9 @@
             android:textColor="#000000"
             android:fontFamily="sans-serif-condensed-light"
             android:text="pony" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

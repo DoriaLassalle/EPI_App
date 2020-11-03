@@ -6,34 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.EntityDeletionOrUpdateAdapter
 import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.ClaseEntity
 import com.example.epi_app.viewmodel.EpiViewModel
-import kotlinx.android.synthetic.main.fragment_admin_clase.*
-import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_reservar_clase.*
 
 
-class ReservarClaseFragment : Fragment(), ClaseAdapter.PassData{
+class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
 
     private val myViewModel:EpiViewModel by activityViewModels()
-    lateinit var myAdapter: ClaseAdapter
+    lateinit var myAdapterReservar: ReservarClaseAdapter
     lateinit var alumno:AlumnoEntity
    lateinit var idAlumnoEmail:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        myAdapter= ClaseAdapter(this)
+        myAdapterReservar= ReservarClaseAdapter(this)
 
     }
 
@@ -50,11 +44,11 @@ class ReservarClaseFragment : Fragment(), ClaseAdapter.PassData{
 
         val myRecycler=recyclerLoQueHay
         myRecycler.layoutManager=LinearLayoutManager(context)
-        myRecycler.adapter=myAdapter
+        myRecycler.adapter=myAdapterReservar
 
                 //muestro las clases disponibles que ingresó el admin
         myViewModel.getAllClases().observe(viewLifecycleOwner, Observer {
-        myAdapter.UpdateAdapter(it)
+        myAdapterReservar.UpdateAdapter(it)
 
         })
 
@@ -64,8 +58,6 @@ class ReservarClaseFragment : Fragment(), ClaseAdapter.PassData{
             Log.d("alumnocnclase", it.toString())
 
         })
-
-
 
         botPagarClase.setOnClickListener {
                 Toast.makeText(context, "OPCIÓN NO HABILITADA AÚN :(", Toast.LENGTH_LONG).show()
@@ -77,16 +69,21 @@ class ReservarClaseFragment : Fragment(), ClaseAdapter.PassData{
     }
 
     override fun passClaseInfo(claseInfo: ClaseEntity){
-       // myViewModel.classSelect(claseInfo)
+        myViewModel.classSelect(claseInfo)
+        Log.d("clase eleg", claseInfo.toString())
 
-        myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
-            idAlumnoEmail=it
 
-        })
+
+       // myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
+      //      idAlumnoEmail=it
+
+       // })
+
+
 
             Toast.makeText(context, "clase selected", Toast.LENGTH_LONG).show()
 
-        val id=ClaseEntity(alumnoEmailId = idAlumnoEmail)
+       // val id=ClaseEntity(alumnoEmailId = idAlumnoEmail)
 
     }
 }

@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.ClaseEntity
-import kotlinx.android.synthetic.main.admin_list.view.*
 import kotlinx.android.synthetic.main.clasedisponible_list.view.*
 
-class ClaseAdapter(val callback: PassData) : RecyclerView.Adapter<ClaseAdapter.ClaseViewHolder>(){
+class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<ReservarClaseAdapter.ClaseViewHolder>(){
+
 
     private var claseList= emptyList<ClaseEntity>()
 
@@ -30,18 +29,18 @@ class ClaseAdapter(val callback: PassData) : RecyclerView.Adapter<ClaseAdapter.C
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClaseAdapter.ClaseViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReservarClaseAdapter.ClaseViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.clasedisponible_list,
             parent, false)
 
         return ClaseViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ClaseAdapter.ClaseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ReservarClaseAdapter.ClaseViewHolder, position: Int) {
         val newClass=claseList[position]
 
-        holder.detalleClase.text=("CLASE PARA EL: ${newClass.dia} a las ${newClass.hora} horas.")
-        holder.teacher.text=("CON: ${newClass.profesor}")
+        holder.detalleClase.text=("CLASE PARA EL DÍA: ${newClass.dia} a las ${newClass.hora} horas.")
+        holder.teacher.text=("CON EL PROFESOR: ${newClass.profesor}")
         holder.categoria.text=("NIVEL: ${newClass.nivel}")
         holder.cupos.text=("CUPOS DISPONIBLES: ${newClass.cupos}")
 
@@ -51,7 +50,9 @@ class ClaseAdapter(val callback: PassData) : RecyclerView.Adapter<ClaseAdapter.C
 
 
     interface PassData {
-        fun passClaseInfo(claseInfo: ClaseEntity){}
+        fun passClaseInfo(claseInfo: ClaseEntity){
+
+        }
 
     }
 }
