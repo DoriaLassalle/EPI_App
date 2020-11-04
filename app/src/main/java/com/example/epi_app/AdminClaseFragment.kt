@@ -91,7 +91,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         diaIngresado=day
         mesIngresado=month
-        datePickerAdmin.setText("Clase para el: $day/$month/$year")
+        datePickerAdmin.setText("Clase para el: $day/${month+1}/$year")  //+1 porque jan es 0
     }
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         level=parent?.getItemAtPosition(p2) as String

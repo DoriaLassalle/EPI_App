@@ -87,6 +87,9 @@
     <string name="reservaste">TU CLASE PARA EL DÍA:</string>
     <string name="clases_disponibles">CLASES DISPONIBLES</string>
     <string name="tus_clases">TUS CLASES</string>
+    <string name="pony_o_cupo">pony</string>
+    <string name="volver">Volver</string>
+    <string name="ver_mis_clases_reservadas">Ver mis clases</string>
 
 
     <string-array name="level_list">

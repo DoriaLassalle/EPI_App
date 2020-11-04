@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.epi_app.model.local.EpiPony
 import com.example.epi_app.model.local.AlumnoDataBase.Companion.getDataBase
 import com.example.epi_app.model.EpiRepository
 import com.example.epi_app.model.local.*
@@ -13,7 +14,8 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
    private val myRepository: EpiRepository
 
     val allAlumno: LiveData<List<AlumnoEntity>>
-    val classSelected = MutableLiveData<ClaseEntity>()   //item seleccionado
+    val classSelected = MutableLiveData<ClaseEntity>()   //clase seleccionado
+    val ponyFaceSelected=MutableLiveData<EpiPony>()
     val selectedRecibir = MutableLiveData<String>()
 
 
@@ -29,6 +31,10 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     fun classSelect(claseSel: ClaseEntity) {
         classSelected.value = claseSel
+    }
+
+    fun ponyFaceSelect(horse: EpiPony){
+        ponyFaceSelected.value =horse
     }
 
     fun select(item: String) {
@@ -80,9 +86,13 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     }
 
-    fun getDataGallery():List<Int> {
-        return myRepository.getDataGallery()
+    fun getDataHorse():List<EpiPony> {
+        return myRepository.getDataHorse()
 
+    }
+
+    fun carrito(idClase: Int, idEmail: String){
+        myRepository.carrito(idClase, idEmail)
     }
 
 

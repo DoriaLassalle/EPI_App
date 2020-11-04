@@ -1,10 +1,12 @@
 package com.example.epi_app
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.epi_app.model.local.ClaseEntity
+import kotlinx.android.synthetic.main.clasedisponible_list.*
 import kotlinx.android.synthetic.main.clasedisponible_list.view.*
 
 class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<ReservarClaseAdapter.ClaseViewHolder>(){
@@ -19,12 +21,15 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
     }
 
     inner class ClaseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        var numeroClase= itemView.idClaseDispo
         var detalleClase = itemView.fechaYhoraDispo  //id del textview a mostrar en el recycler
         var teacher = itemView.profeDispo
         var categoria = itemView.nivelDispo
         var cupos = itemView.ponyDispo
         val click=itemView.setOnClickListener {
             callback.passClaseInfo(claseList[adapterPosition])
+            itemView.cvClaseDisponible.setCardBackgroundColor(Color.parseColor("#F8728D"))
+
         }
 
     }
@@ -39,10 +44,11 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
     override fun onBindViewHolder(holder: ReservarClaseAdapter.ClaseViewHolder, position: Int) {
         val newClass=claseList[position]
 
-        holder.detalleClase.text=("CLASE PARA EL DÍA: ${newClass.dia} a las ${newClass.hora} horas.")
-        holder.teacher.text=("CON EL PROFESOR: ${newClass.profesor}")
-        holder.categoria.text=("NIVEL: ${newClass.nivel}")
-        holder.cupos.text=("CUPOS DISPONIBLES: ${newClass.cupos}")
+        holder.numeroClase.text=("CLASE N° ${newClass.id} ")
+        holder.detalleClase.text=("Fecha: ${newClass.dia} - Hora: ${newClass.hora}")
+        holder.teacher.text=("Profesor: ${newClass.profesor}")
+        holder.categoria.text=("Nivel: ${newClass.nivel}")
+        holder.cupos.text=("Cupos Disponibles: ${newClass.cupos}")
 
     }
 
@@ -50,7 +56,7 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
 
 
     interface PassData {
-        fun passClaseInfo(claseInfo: ClaseEntity){
+        fun passClaseInfo(claseInfo: ClaseEntity){   //aqui recibo lo que selecciono
 
         }
 

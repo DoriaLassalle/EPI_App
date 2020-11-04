@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/parabackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ReservarClaseFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="541dp"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_height="523dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/titulo4"
@@ -22,72 +23,32 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerLoQueHay"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="250dp"/>
-
-        <TextView
-            android:id="@+id/titulo5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/crushed"
-            android:text="@string/tus_clases"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="25sp"
-             />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerLoQueReserva"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"/>
-        <TextView
-            android:id="@+id/totalClases"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/crushed"
-            tools:text="Total de clases: xxx"
-            android:textAlignment="textEnd"
-            android:textColor="#000000"
-            android:textSize="25sp"
             />
 
-    </LinearLayout>
 
+    </LinearLayout>
     <Button
-        android:id="@+id/botAgendarClase"
-        android:layout_width="190dp"
+        android:id="@+id/botVerMisClases"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="550dp"
-        android:text="@string/agendar_clase"
         android:fontFamily="@font/crushed"
+        android:text="@string/ver_mis_clases_reservadas"
         android:textSize="20sp"
         />
-    <Button
-        android:id="@+id/botPagarClase"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="210dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="550dp"
-        android:text="pagar clases"
-        android:fontFamily="@font/crushed"
-        android:textSize="20sp"
-        />
+
     <Button
         android:id="@+id/botClaseHome"
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerGallery"
+        android:id="@+id/recyclerEpiPony"
         android:layout_width="match_parent"
         android:scrollbars="horizontal"
         android:layout_height="500dp"
@@ -25,6 +25,6 @@
         android:fontFamily="@font/crushed"
         android:textSize="20sp"
         android:text="@string/home"
-        app:layout_constraintTop_toBottomOf="@id/recyclerGallery"/>
+        app:layout_constraintTop_toBottomOf="@id/recyclerEpiPony"/>
 
 </FrameLayout>

@@ -2,6 +2,7 @@ package com.example.epi_app.model
 
 
 import androidx.lifecycle.LiveData
+import com.example.epi_app.model.local.EpiPony
 import com.example.epi_app.R
 import com.example.epi_app.model.local.*
 import com.example.epi_app.model.netw.PonyApi
@@ -134,15 +135,15 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
             Team("JORGE NEGRETE", "Ordenanza\nEn la EPI desde 2016", R.drawable.jorge,
         "Encargado de cuidar a nuestros Ponies y Caballos, tenerlos bien alimentados, limpios" +
                 "y felices."))
-        /*teamList.add(Team("Daniela", "Especialista en Barefooting Equino", R.drawable,
+        teamList.add(Team("DANIELA", "Especialista en Barefooting Equino", R.drawable.logoepi,
         "Mantiene los cascos de nuestros Ponies y Caballos sanos, bien despalmados, aplomados y " +
                 "sin herraduras."))
-        teamList.add(Team("Consuelo Bittner", "Veterinaria", R.drawable, "Veterinaria" +
+        teamList.add(Team("CONSUELO BITTNER", "Veterinaria", R.drawable.logoepi, "Veterinaria" +
                 "favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
                 "sea pequeño."))
-        teamList.add(Team("Dominique Sunko", "Veterinaria", R.drawable, "Veterinaria " +
+        teamList.add(Team("DOMINIQUE SUNKO", "Veterinaria", R.drawable.logoepi, "Veterinaria " +
                 "amiga de todos los Ponies y Caballos.\nEncargada de sus desparasitaciones , vacunas" +
-                "reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))*/
+                "reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))
 
         return teamList
 
@@ -152,7 +153,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         val tiendaList:ArrayList<Tienda> = ArrayList()
 
         tiendaList.add(Tienda(R.drawable.tcasco1, "CASCO AJUSTABLE NEGRO", 42000))
-        tiendaList.add(Tienda(R.drawable.tcasco2, "CASCO ALTA RESISTENCIA", 48000))
+        tiendaList.add(Tienda(R.drawable.tcasco2, "CASCO PRO", 48000))
         tiendaList.add(Tienda(R.drawable.tmandilnegro, "MANDIL DE SALTO NEGRO", 27000))
         tiendaList.add(Tienda(R.drawable.tmandilrojo, "MANDIL DE SALTO ROJO", 27000))
         tiendaList.add(Tienda(R.drawable.tamigurumi, "AMIGURUMI LLAVERO", 8000))
@@ -166,12 +167,33 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     }
 
-    fun getDataGallery():List<Int>{
-        val galleryList = listOf<Int>(R.drawable.gal1, R.drawable.gal2, R.drawable.gal3, R.drawable.gal4,
-        R.drawable.gal5, R.drawable.gal6, R.drawable.gal7, R.drawable.gal8, R.drawable.gal9, R.drawable.gal10)
+    fun getDataHorse():List<EpiPony>{
+        val ponyFaceList:ArrayList<EpiPony> =ArrayList()
 
-        return galleryList
+        ponyFaceList.add(
+            EpiPony(R.drawable.facehakan, "Hakán", "caballito hop",
+        R.drawable.fullhakan)
+        )
+        ponyFaceList.add(
+            EpiPony(R.drawable.facemilodon, "Milodón", "Le encanta su cueva",
+        R.drawable.fullmilodon)
+        )
+        ponyFaceList.add(
+            EpiPony(R.drawable.facepapaya, "Papaya", "Dulce y jugosa",
+            R.drawable.fullpapaya)
+        )
+        ponyFaceList.add(
+            EpiPony(R.drawable.faceragnar, "Ragnar", "Pony vikingo",
+        R.drawable.fullragnar)
+        )
+
+        return ponyFaceList
     }
+
+    fun carrito(idClase: Int, idEmail: String)   = CoroutineScope(Dispatchers.IO).launch {
+        myClaseDao.insertIdAlumnoClase(idClase, idEmail)
+    }
+
 
 
 

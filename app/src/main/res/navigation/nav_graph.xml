@@ -148,6 +148,9 @@
         <action
             android:id="@+id/action_reservarClaseFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_reservarClaseFragment_to_claseReservadaFragment"
+            app:destination="@id/claseReservadaFragment" />
     </fragment>
     <fragment
         android:id="@+id/tiendaFragment"
@@ -157,5 +160,14 @@
         <action
             android:id="@+id/action_tiendaFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/claseReservadaFragment"
+        android:name="com.example.epi_app.ClaseReservadaFragment"
+        android:label="fragment_clase_reservada"
+        tools:layout="@layout/fragment_clase_selected" >
+        <action
+            android:id="@+id/action_claseReservadaFragment_to_reservarClaseFragment"
+            app:destination="@id/reservarClaseFragment" />
     </fragment>
 </navigation>

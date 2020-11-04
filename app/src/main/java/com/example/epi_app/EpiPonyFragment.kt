@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.epi_app.model.local.ClaseEntity
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.epi_app.model.local.EpiPony
 import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_epipony.*
 
@@ -35,10 +35,10 @@ class EpiPonyFragment : Fragment(),  EpiPonyAdapter.passPonyData{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView=recyclerGallery
-        recyclerView.layoutManager=LinearLayoutManager(context)
+        val recyclerView=recyclerEpiPony
+        recyclerView.layoutManager= GridLayoutManager(context, 2)
         recyclerView.adapter=myAdapter
-        myAdapter.updateAdapter(myViewModel.getDataGallery())
+        myAdapter.updateAdapter(myViewModel.getDataHorse())
 
 
         botGalleryHome.setOnClickListener {
@@ -46,13 +46,13 @@ class EpiPonyFragment : Fragment(),  EpiPonyAdapter.passPonyData{
         }
     }
 
-    override fun passEpiPony(epiPony: Int){
-        //myViewModel.classSelect(claseInfo)
+    override fun passEpiPony(epiPony: EpiPony){
+        myViewModel.ponyFaceSelect(epiPony)
         Log.d("pony selec", epiPony.toString())
-        val myBundle = Bundle()
-        myBundle.putInt("ponyinfo", epiPony)
+       // val myBundle = Bundle()
+        //myBundle.putSerializable("ponyinfo", epiPony)
 
-        findNavController().navigate(R.id.action_EpiPonyFragment_to_itemPonyFragment, myBundle)
+        findNavController().navigate(R.id.action_EpiPonyFragment_to_itemPonyFragment)
 
     }
 

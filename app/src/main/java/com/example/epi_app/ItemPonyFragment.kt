@@ -6,21 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_item_epipony.*
 
 
 class ItemPonyFragment : Fragment() {
 
-     var imagenPony:Int=0
+    private val myViewModel: EpiViewModel by activityViewModels()
+
+     var reciboEpipony:String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments.let {
-            imagenPony = arguments?.getInt("ponyinfo") ?:
-            Log.d("IMGSECONG", imagenPony.toString())
+            reciboEpipony = arguments?.getString("ponyinfo")
+            Log.d("IMGSECONG", reciboEpipony.toString())
         }
     }
 
@@ -36,8 +41,18 @@ class ItemPonyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val imageView = ivPonyIndiv
-        Glide.with(this).load(imagenPony).fitCenter().into(imageView)
+
+        myViewModel.ponyFaceSelected.observe(viewLifecycleOwner, Observer {
+            val fullPony = ivPonyIndiv
+            tvPonyNombre.text=it.nomPony
+            tvPonyText.text=it.desc
+
+
+            Glide.with(this).load(it.fullimage).fitCenter().into(fullPony)
+
+
+        })
+
 
 
         botBackPony.setOnClickListener {

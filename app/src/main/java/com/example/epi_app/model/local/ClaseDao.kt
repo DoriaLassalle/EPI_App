@@ -7,7 +7,7 @@ import androidx.room.*
 interface ClaseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertClase(clase:ClaseEntity)
+    fun insertClase(clase: ClaseEntity)
 
     @Query("SELECT * FROM clase")
     fun getAllClases():LiveData<List<ClaseEntity>>
@@ -17,7 +17,8 @@ interface ClaseDao {
     fun getAlumnoWithClase(): LiveData<List<RelationAlumnoClase>>
 
 
-
+    @Query("UPDATE clase SET alumnoEmailId = :idEmail WHERE id = :id")
+    fun insertIdAlumnoClase(id: Int, idEmail: String?): Int
 
 
 }

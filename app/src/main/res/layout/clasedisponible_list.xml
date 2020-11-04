@@ -5,52 +5,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvClaseDisponible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/fechaYhoraDispo"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="sans-serif-condensed-light"
-            tools:text="detalle clase" />
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/profeDispo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="sans-serif-condensed-light"
-            tools:text="@string/profesor" />
+            <TextView
+                android:id="@+id/idClaseDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                tools:text="numero de clase" />
 
-        <TextView
-            android:id="@+id/nivelDispo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="sans-serif-condensed-light"
-            tools:text="nivel" />
+            <TextView
+                android:id="@+id/fechaYhoraDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                tools:text="detalle clase" />
 
-        <TextView
-            android:id="@+id/ponyDispo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="pony" />
+            <TextView
+                android:id="@+id/profeDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                tools:text="@string/profesor" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/nivelDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                tools:text="nivel" />
+
+            <TextView
+                android:id="@+id/ponyDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/pony_o_cupo"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

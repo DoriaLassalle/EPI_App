@@ -10,5 +10,5 @@
     <color name="red">#CB1116</color>
     <color name="darkred">#950206</color>
     <color name="secondary">#F8728D</color>
-
+    <color name="parabackground">#16CB1116</color>
 </resources>

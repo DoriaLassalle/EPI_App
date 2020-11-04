@@ -26,8 +26,8 @@
                 android:text="@string/tv1"
                 android:textAlignment="center"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/crushed"
-                android:textSize="24sp"
+                android:fontFamily="cursive"
+                android:textSize="30sp"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <Space

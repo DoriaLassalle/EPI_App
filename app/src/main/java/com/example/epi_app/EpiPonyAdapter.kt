@@ -5,19 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.epi_app.model.local.EpiPony
 import kotlinx.android.synthetic.main.epipony_list.view.*
 
 class EpiPonyAdapter(val callback2: EpiPonyFragment) :RecyclerView.Adapter<EpiPonyAdapter.EpiPonyViewHolder>(){
 
-    private var epiPonyList= emptyList<Int>()
+    private var epiPonyList= emptyList<EpiPony>()
 
-    fun updateAdapter(mList: List<Int>){
+    fun updateAdapter(mList: List<EpiPony>){
         epiPonyList=mList
         notifyDataSetChanged()
     }
 
     inner class EpiPonyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val itemImage=itemView.imgGallery
+        val itemPonyImg=itemView.ivPonyFace
         val click=itemView.setOnClickListener {
             callback2.passEpiPony(epiPonyList[adapterPosition])
         }
@@ -30,16 +31,16 @@ class EpiPonyAdapter(val callback2: EpiPonyFragment) :RecyclerView.Adapter<EpiPo
     }
 
     override fun onBindViewHolder(holder: EpiPonyViewHolder, position: Int) {
-            val galFoto=epiPonyList[position]
+            val faceFoto=epiPonyList[position].imageponyFace  // le paso el valor que tenga en la clase
 
-        Glide.with(holder.itemView.context).load(galFoto).fitCenter().into(holder.itemImage)
+        Glide.with(holder.itemView.context).load(faceFoto).fitCenter().into(holder.itemPonyImg)
 
     }
 
     override fun getItemCount()= epiPonyList.size
 
     interface passPonyData{
-        fun passEpiPony(epiPony: Int)
+        fun passEpiPony(epiPony: EpiPony)
 
     }
 
