@@ -38,7 +38,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
+                    //recibo el nombre del usuario que ingresó a la app-picked at loginfragment
+        myViewModel.selectedName.observe(viewLifecycleOwner, Observer {
             Log.d("Que hay?", it)
 
             welcome.text=("HOLA $it :)")

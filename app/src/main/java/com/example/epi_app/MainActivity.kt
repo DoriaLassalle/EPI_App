@@ -10,6 +10,7 @@ import android.view.MenuItem
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_EPI_App)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //setSupportActionBar(findViewById(R.id.toolbar))

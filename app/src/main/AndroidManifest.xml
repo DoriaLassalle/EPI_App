@@ -9,12 +9,12 @@
         android:label=""
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EPI_App">
+        android:theme="@style/Theme.EPI_App.NoActionBar">
 
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/Theme.EPI_App.NoActionBar">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_clase_selected.*
 import kotlinx.android.synthetic.main.fragment_clase_selected.*
 
@@ -32,6 +33,9 @@ class ClaseReservadaFragment : Fragment() {
 
         botPagarClase.setOnClickListener {
             Toast.makeText(context, "PROXIMAMENTE", Toast.LENGTH_LONG).show()
+        }
+        botClaseReservadaBack.setOnClickListener {
+            findNavController().navigate(R.id.action_claseReservadaFragment_to_reservarClaseFragment)
         }
 
     }

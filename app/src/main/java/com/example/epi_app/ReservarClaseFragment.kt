@@ -77,7 +77,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
 
         val idClaseElegida=claseInfo.id             //extraigo el id(PK) de la clase selected
 
-                    //Traigo el alumno que está en la sesión por su PK
+                    //Traigo el alumno que ingresó a la app por su PK que es el mail-picked at loginfrag
         myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
            idAlumnoEmail=it
 

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.EPI_App" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.EPI_App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#CB1116</item>
         <item name="colorPrimaryVariant">#950206</item>
@@ -22,6 +22,10 @@
     <style name="Theme.EPI_App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.EPI_App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SplashTheme" parent="Theme.EPI_App">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 
 
 </resources>

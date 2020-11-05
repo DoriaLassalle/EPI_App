@@ -43,13 +43,14 @@ class LoginFragment : Fragment() {
             } else {
 
                 myViewModel.validateUser(loginMail.text.toString(), loginPassword.text.toString())
-                    .observe(viewLifecycleOwner, androidx.lifecycle.Observer{
+                    .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                         if (it == null) {
                             Toast.makeText(context, "DATOS USUARIO INVÁLIDOS", Toast.LENGTH_LONG)
                                 .show()
                         } else {
 
                             myViewModel.select(it.email)
+                            myViewModel.selectName((it.name))  //traspaso el nombre
 
 
                             findNavController().navigate(R.id.action_LoginFragment_to_HomeFragment)

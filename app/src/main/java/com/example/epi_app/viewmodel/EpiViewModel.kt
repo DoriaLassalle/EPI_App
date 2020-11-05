@@ -17,6 +17,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     val classSelected = MutableLiveData<ClaseEntity>()   //clase seleccionado
     val ponyFaceSelected=MutableLiveData<EpiPony>()
     val selectedRecibir = MutableLiveData<String>()
+    val selectedName=MutableLiveData<String>()
 
 
 
@@ -39,6 +40,9 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     fun select(item: String) {
         selectedRecibir.value = item
+    }
+    fun selectName(name:String){
+        selectedName.value=name
     }
 
     fun insert(student: AlumnoEntity){

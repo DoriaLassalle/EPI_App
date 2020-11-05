@@ -90,6 +90,10 @@
     <string name="pony_o_cupo">pony</string>
     <string name="volver">Volver</string>
     <string name="ver_mis_clases_reservadas">Ver mis clases</string>
+    <string name="titulo_nosotros">EQUIPO HUMANO DE LA EPI</string>
+    <string name="nuestros_caballos">NUESTROS CABALLOS</string>
+    <string name="team_humano">TEAM HUMANO</string>
+    <string name="team_equino">TEAM EQUINO</string>
 
 
     <string-array name="level_list">
