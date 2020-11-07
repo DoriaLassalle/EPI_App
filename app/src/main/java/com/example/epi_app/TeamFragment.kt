@@ -19,12 +19,12 @@ class TeamFragment : Fragment() {
 
     private val myViewModel:EpiViewModel by activityViewModels()
 
-    lateinit var myAdapter: TeamAdapter
+    lateinit var myAdapter2: TeamAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        myAdapter = TeamAdapter()
+        myAdapter2 = TeamAdapter()
 
     }
 
@@ -49,8 +49,8 @@ class TeamFragment : Fragment() {
 
         val recyclerView=recyclerTeam
         recyclerView.layoutManager=LinearLayoutManager(context)
-        recyclerView.adapter=myAdapter
-        myAdapter.updateAdapter(myViewModel.getDataTeam())
+        recyclerView.adapter=myAdapter2
+        myAdapter2.updateAdapter(myViewModel.getDataTeam())
 
     }
 

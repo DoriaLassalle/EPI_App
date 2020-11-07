@@ -40,17 +40,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Hora de la Clase"
+            android:hint="Hora de la Clase (12:00)"
             android:importantForAutofill="no" />
 
-        <EditText
-            android:id="@+id/profeClase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/profesor"
-            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/caballosClase"
@@ -67,26 +59,32 @@
             android:layout_width="match_parent"
             android:layout_height="45dp" />
 
+        <Spinner
+            android:id="@+id/spinnerAdminProfes"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/botEliminarClase"
-        android:layout_width="125dp"
+        android:id="@+id/botVerClases"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/btn_redondeado"
         android:layout_marginTop="550dp"
-        android:text="@string/eliminar"
+        android:text="@string/ver_clases"
         android:fontFamily="@font/crushed"
         android:textSize="20sp"
         />
+
     <Button
         android:id="@+id/botGuardarClase"
-        android:layout_width="125dp"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="270dp"
+        android:layout_marginStart="210dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/btn_redondeado"
         android:layout_marginTop="550dp"
@@ -94,18 +92,7 @@
         android:fontFamily="@font/crushed"
         android:textSize="20sp"
         />
-    <Button
-        android:id="@+id/botModificarClase"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="550dp"
-        android:text="@string/modificar"
-        android:fontFamily="@font/crushed"
-        android:textSize="20sp"
-        />
+
 
     <Button
         android:id="@+id/botAdminBack"

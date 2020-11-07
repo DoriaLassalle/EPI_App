@@ -35,9 +35,17 @@ class RegisterFragment : Fragment() {
 
                Toast.makeText(context, "COMPLETA TODOS LOS CAMPOS", Toast.LENGTH_LONG).show()
 
-           }else if(!regPass.text.toString().equals(regPass2.text.toString())){
+           }else if(!regMail.text.toString().contains("@") || !regMail.text.toString().contains(".") ){
 
-                   Toast.makeText(context, "LAS CONTRASEÑAS NO COINCIDEN", Toast.LENGTH_LONG).show()
+                   Toast.makeText(context, "FORMATO DE CORREO INVÁLIDO", Toast.LENGTH_LONG).show()
+
+           }else if(!regPass.text.toString().equals(regPass2.text.toString())) {
+
+               Toast.makeText(context, "LAS CONTRASEÑAS NO COINCIDEN", Toast.LENGTH_LONG).show()
+
+           }else if(regPass.text.toString().length<8){
+
+                   Toast.makeText(context, "LA CONTRASEÑA ES MUY CORTA", Toast.LENGTH_LONG).show()
 
            }else{
                var exp=false

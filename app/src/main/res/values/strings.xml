@@ -96,6 +96,7 @@
     <string name="team_equino">TEAM EQUINO</string>
     <string name="alumnos_registrados">ALUMNOS REGISTRADOS</string>
     <string name="ingresar_clase">Ingresar clase</string>
+    <string name="ver_clases">Ver clases</string>
 
 
     <string-array name="level_list">
@@ -104,6 +105,15 @@
         <item>Prebásico</item>
         <item>Básico</item>
         <item>Intermedio Avanzado</item>
+
+    </string-array>
+
+    <string-array name="profes_list">
+        <item>Elige Profesor:</item>
+        <item>Sharon Lassalle</item>
+        <item>Tomás Van Cauwelaert</item>
+        <item>Jean-Pierre Lassalle</item>
+
 
     </string-array>
 

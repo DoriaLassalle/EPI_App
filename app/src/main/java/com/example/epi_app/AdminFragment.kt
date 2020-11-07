@@ -16,14 +16,14 @@ import kotlinx.android.synthetic.main.fragment_admin.*
 
 class AdminFragment : Fragment() {
 
-    lateinit var mAdapter: AdminAdapter
+    lateinit var mAdapter5: AdminAdapter
     val mViewModel: EpiViewModel by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mAdapter= AdminAdapter()
+        mAdapter5= AdminAdapter()
 
     }
 
@@ -48,9 +48,9 @@ class AdminFragment : Fragment() {
 
         val mRecycler=recyclerAdmin
         mRecycler.layoutManager=LinearLayoutManager(context)
-        mRecycler.adapter=mAdapter
+        mRecycler.adapter=mAdapter5
          mViewModel.allAlumno.observe(viewLifecycleOwner, Observer {
-             mAdapter.UpdateAdapter(it)
+             mAdapter5.UpdateAdapter(it)
 
              Log.d("lista", it.toString())
          })

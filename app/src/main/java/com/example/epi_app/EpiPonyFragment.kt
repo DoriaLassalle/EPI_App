@@ -18,11 +18,11 @@ class EpiPonyFragment : Fragment(),  EpiPonyAdapter.passPonyData{
 
     private val myViewModel: EpiViewModel by activityViewModels()
 
-    lateinit var myAdapter: EpiPonyAdapter
+    lateinit var myAdapter4: EpiPonyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        myAdapter= EpiPonyAdapter(this)
+        myAdapter4= EpiPonyAdapter(this)
 
     }
 
@@ -37,8 +37,8 @@ class EpiPonyFragment : Fragment(),  EpiPonyAdapter.passPonyData{
 
         val recyclerView=recyclerEpiPony
         recyclerView.layoutManager= GridLayoutManager(context, 2)
-        recyclerView.adapter=myAdapter
-        myAdapter.updateAdapter(myViewModel.getDataHorse())
+        recyclerView.adapter=myAdapter4
+        myAdapter4.updateAdapter(myViewModel.getDataHorse())
 
 
         botGalleryHome.setOnClickListener {

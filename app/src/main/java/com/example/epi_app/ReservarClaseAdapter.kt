@@ -28,7 +28,7 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
         var cupos = itemView.ponyDispo
         val click=itemView.setOnClickListener {
             callback.passClaseInfo(claseList[adapterPosition])
-            itemView.cvClaseDisponible.setCardBackgroundColor(Color.parseColor("#F8728D"))
+            itemView.cvClaseDisponible.setCardBackgroundColor(Color.parseColor("#dcdbdb"))
 
         }
 

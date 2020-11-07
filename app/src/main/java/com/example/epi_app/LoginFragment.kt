@@ -18,7 +18,6 @@ class LoginFragment : Fragment() {
 
     val myViewModel: EpiViewModel by activityViewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +38,10 @@ class LoginFragment : Fragment() {
             if (loginMail.text.isBlank() || loginPassword.text.isBlank()) {
 
                 Toast.makeText(context, "COMPLETA AMBOS CAMPOS", Toast.LENGTH_LONG).show()
+
+            }else if (!loginMail.text.contains("@")){
+
+                    Toast.makeText(context, "FORMATO DE CORREO INCORRECTO", Toast.LENGTH_LONG).show()
 
             } else {
                                     //envio el correo y passs ingresados a la bd para validar que existan

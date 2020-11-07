@@ -15,7 +15,7 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
 
 
     fun UpdateAdapter(list:List<ClaseEntity>){
-        claseSelectedList=list;
+        claseSelectedList=list
         notifyDataSetChanged()
 
     }
@@ -39,7 +39,7 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
 
         holder.fechaClaseReser.text=selectedClass.dia
         holder.horaReser.text=selectedClass.hora
-        //holder.ponyReser.text=selectedClass.cupos
+        holder.ponyReser.text=selectedClass.id.toString() // cambiarlo por los cupos
 
     }
 

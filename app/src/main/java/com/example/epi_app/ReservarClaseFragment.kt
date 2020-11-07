@@ -30,7 +30,6 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         myAdapterReservar= ReservarClaseAdapter(this)
 
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +50,6 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         myAdapterReservar.UpdateAdapter(it)
 
         })
-
 
         botClaseHome.setOnClickListener {
             findNavController().navigate(R.id.action_reservarClaseFragment_to_HomeFragment)
@@ -74,7 +72,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
             Log.d("content", it)
 
         })
-                     //Valido que la clase sea seleccionada una sola vez
+
       /* if (si no ha pinchadola clase entonces la guardo) {
 
             Toast.makeText(context, "CLASE N° ${claseInfo.id} SELECCIONADA", Toast.LENGTH_LONG)
@@ -83,6 +81,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
          }else{
                 Toast.makeText(context, "YA SELECCIONASTE ESTA CLASE", Toast.LENGTH_LONG).show()
         }*/
+
 
         //relaciono la clase elegida al alumno, envio a BD
         myViewModel.carrito(RelationAlumnoClase(email = idAlumnoEmail, id = idClaseElegida))

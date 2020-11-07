@@ -18,8 +18,6 @@ import kotlinx.android.synthetic.main.fragment_recuperar.*
 class RecuperarFragment : Fragment() {
 
     private val myViewModel: EpiViewModel by activityViewModels()
-    lateinit var toUpdate:AlumnoEntity
-
 
 
     override fun onCreateView(
@@ -44,9 +42,9 @@ class RecuperarFragment : Fragment() {
                         Toast.makeText(context, "LAS CONTRASEÑAS NO COINCIDEN", Toast.LENGTH_LONG).show()
 
                 }else{
+                                //valido que el mail de usuario exista en la bd
                     myViewModel.validateMail(recupMailRegist.text.toString()).observe(viewLifecycleOwner,
                     Observer {
-                        Log.d("trae el mail?", it.toString())
 
                         if (it==null){
 
@@ -55,10 +53,10 @@ class RecuperarFragment : Fragment() {
 
                         }else {
 
-                            // val newPassword=chgPass.text.toString()
-                             //val emailUser=it.email
+                             val newPassword=chgPass.text.toString()
+                             val emailUser=it.email
 
-                             myViewModel.insertNewPassword(it.password, it.email)  //envio la clave nueva para actualizarla
+                             myViewModel.insertNewPassword(newPassword, emailUser)  //envio la clave nueva para actualizarla
 
                             Toast.makeText(context, "CONTRASEÑA ACTUALIZADA :)", Toast.LENGTH_LONG).show()
                             findNavController().navigate(R.id.action_recuperarFragment_to_LoginFragment)

@@ -19,12 +19,13 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import kotlin.concurrent.fixedRateTimer
 
 
-class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class AdminClaseFragment : Fragment() {
 
     private val myViewModel :EpiViewModel by activityViewModels()
     var diaIngresado:Int=0
     lateinit var mesIngresado:String
     lateinit var level:String
+    lateinit var profes:String
 
 
     override fun onCreateView(
@@ -40,39 +41,74 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         datePickerAdmin.setOnClickListener { showDatePickerDialog() }
 
+                        //Spinner Profes
+                     // crear ArrayAdapter con el string array y el default spinner layout
+        context?.let {
+            ArrayAdapter.createFromResource(
+                it, R.array.profes_list,
+                android.R.layout.simple_spinner_item).also { adapter ->
+                    //  layout to use when the list of choices appears
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                // paso el adapter al spinner
+                spinnerAdminProfes.adapter = adapter
+                spinnerAdminProfes.onItemSelectedListener= object :
+                AdapterView.OnItemSelectedListener{
 
+                    override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        profes=parent?.getItemAtPosition(p2) as String
+
+                    }
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+                        Toast.makeText(context, "NO SELECCIONASTE PROFESOR", Toast.LENGTH_LONG).show()
+                    }
+
+                }
+
+            }
+        }
+                    //Spinner nivel
+        context?.let {
+            ArrayAdapter.createFromResource(
+                it, R.array.level_list,
+                android.R.layout.simple_spinner_item).also { adapter ->
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinnerAdmminNivel.adapter = adapter
+                spinnerAdmminNivel.onItemSelectedListener= object :
+                AdapterView.OnItemSelectedListener{
+
+                    override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        level=parent?.getItemAtPosition(p2) as String
+
+                    }
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+                        Toast.makeText(context, "NO SELECCIONASTE NIVEL", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
 
         botAdminBack.setOnClickListener {
             findNavController().navigate(R.id.action_adminClaseFragment_to_adminFragment)
         }
 
-                // crear ArrayAdapter con el string array y el default spinner layout
-        context?.let {
-            ArrayAdapter.createFromResource(
-                it, R.array.level_list,
-                android.R.layout.simple_spinner_item).also { adapter ->
-                //  layout to use when the list of choices appears
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                // paso el adapter al spinner
-                spinnerAdmminNivel.adapter = adapter
-                spinnerAdmminNivel.onItemSelectedListener= this
-            }
-        }
-
         botGuardarClase.setOnClickListener {
-            if (horaClase.text.isBlank()||profeClase.text.isBlank()|| caballosClase.text.isBlank() ||
-                    datePickerAdmin.text.isBlank()){
+            if (horaClase.text.isBlank()|| caballosClase.text.isBlank() ||
+                    datePickerAdmin.text.isBlank()) {
 
-                    Toast.makeText(context, "COMPLETA TODA LA INFORMACIÓN", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "COMPLETA TODA LA INFORMACIÓN", Toast.LENGTH_LONG).show()
+
+            }else if (!horaClase.text.contains(":")){
+
+                    Toast.makeText(context, "FORMATO DE HORA INCORRECTO", Toast.LENGTH_LONG).show()
             }else {
 
                 myViewModel.insertClass(
                     ClaseEntity(
                         dia = ("${diaIngresado}/${mesIngresado}"),
                         hora = horaClase.text.toString(),
-                        profesor = profeClase.text.toString(),
+                        profesor = profes,
                         cupos = caballosClase.text.toString(),
-                        nivel = level
+                        nivel = level               //la seleccion del spinner
                     )
                 )
                 Toast.makeText(context, "CLASE GUARDADA :)", Toast.LENGTH_LONG).show()
@@ -80,6 +116,10 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 horaClase.setText("")
                 datePickerAdmin.setText("")
             }
+        }
+
+        botVerClases.setOnClickListener {
+            findNavController().navigate(R.id.action_adminClaseFragment_to_adminClaseCnAlumnosFragment)
         }
     }
 
@@ -132,15 +172,5 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         datePickerAdmin.setText("Clase para el: $diaIngresado/$mesIngresado/${year}")  //+1 porque jan es 0
     }
-                        //spinner
-    override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        level=parent?.getItemAtPosition(p2) as String
-        Log.d("spinner", level)
-
-    }
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-            Toast.makeText(context, "NO SELECCIONASTE NIVEL", Toast.LENGTH_LONG).show()
-    }
-
 
 }

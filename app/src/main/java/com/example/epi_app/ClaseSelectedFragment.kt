@@ -26,12 +26,14 @@ class ClaseReservadaFragment : Fragment() {
     private val myViewModel: EpiViewModel by activityViewModels()
     lateinit var misClasesAdapter: ClaseSelectedAdapter
     private  var  userId:String =""
+    lateinit var objeto:ClaseEntity
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         misClasesAdapter= ClaseSelectedAdapter()
+
 
     }
 
@@ -65,7 +67,14 @@ class ClaseReservadaFragment : Fragment() {
 
         })
         myViewModel.getAlumnoWithClase().observe(viewLifecycleOwner, Observer {
+            Log.d("que hay aqui", it.toString())
             misClasesAdapter.UpdateAdapter(convertListToShow(it))
+
+            //muestra la ultima clase de cada alumno porque el it trae a todos los alumnos que tienen
+            //clase, con el detalle de cada clase
+
+            //ahora no se que weada muestra porque muestra 3 elementos pero no coinciden con las
+            //clases que eligió el alumno.
 
 
         })
@@ -81,11 +90,12 @@ class ClaseReservadaFragment : Fragment() {
         return listMutable
     }
     fun decodingArray(list2: List<ClaseEntity>): ClaseEntity{
-       lateinit var objeto:ClaseEntity
+
         list2.map {
             objeto=it
         }
-        return objeto
+        return objeto   //algo pasa aqui se cayó la app porque la val estaba aca y pidio inicializar
+                        //la puse arriba, y ahora muestra 3 elementos en el recycler
 
     }
 }

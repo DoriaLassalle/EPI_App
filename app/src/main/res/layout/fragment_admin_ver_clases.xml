@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminVerClasesFragment">
+
+    <Button
+        android:id="@+id/botModificarClase"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/modificar"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/botEliminarClase"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="550dp"
+        android:text="@string/eliminar"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+
+
+    <Button
+        android:id="@+id/botAdminBack2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_redondeado"
+        android:layout_marginTop="605dp"
+        android:text="@string/back"
+        android:fontFamily="@font/crushed"
+        android:textSize="20sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAdminVerClases"
+        android:layout_width="match_parent"
+        android:layout_height="542dp" />
+
+</FrameLayout>
