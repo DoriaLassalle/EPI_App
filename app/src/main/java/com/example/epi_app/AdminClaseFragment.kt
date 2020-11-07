@@ -23,7 +23,7 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private val myViewModel :EpiViewModel by activityViewModels()
     var diaIngresado:Int=0
-    var mesIngresado:Int=0
+    lateinit var mesIngresado:String
     lateinit var level:String
 
 
@@ -87,12 +87,52 @@ class AdminClaseFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
         activity?.supportFragmentManager?.let { datePicker.show(it, "datePicker") }
     }
-
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         diaIngresado=day
-        mesIngresado=month
-        datePickerAdmin.setText("Clase para el: $day/${month+1}/$year")  //+1 porque jan es 0
+
+        when(month){
+            0->{
+                mesIngresado="ENE"
+            }
+            1-> {
+                mesIngresado="FEB"
+            }
+            2-> {
+                mesIngresado="MAR"
+            }
+            3-> {
+                mesIngresado="ABR"
+            }
+            4-> {
+                mesIngresado="MAY"
+            }
+            5-> {
+                mesIngresado="JUN"
+            }
+            6-> {
+                mesIngresado="JUL"
+            }
+            7-> {
+                mesIngresado="AGO"
+            }
+            8-> {
+                mesIngresado="SEP"
+            }
+            9-> {
+                mesIngresado="OCT"
+            }
+            10-> {
+                mesIngresado="NOV"
+            }
+            11-> {
+                mesIngresado="DIC"
+            }
+
+        }
+
+        datePickerAdmin.setText("Clase para el: $diaIngresado/$mesIngresado/${year}")  //+1 porque jan es 0
     }
+                        //spinner
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         level=parent?.getItemAtPosition(p2) as String
         Log.d("spinner", level)

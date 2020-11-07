@@ -18,6 +18,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     val ponyFaceSelected=MutableLiveData<EpiPony>()
     val selectedRecibir = MutableLiveData<String>()
     val selectedName=MutableLiveData<String>()
+    val passwordRecibir= MutableLiveData<String>()
 
 
 
@@ -41,6 +42,11 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     fun select(item: String) {
         selectedRecibir.value = item
     }
+
+    fun recuperarPassword(valor:String){
+        passwordRecibir.value=valor
+    }
+
     fun selectName(name:String){
         selectedName.value=name
     }
@@ -61,7 +67,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         return myRepository.getAllClases()
     }
 
-    fun getAlumnoWithClase():LiveData<List<RelationAlumnoClase>>{
+    fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>{
         return myRepository.getAlumnoWithClase()
     }
 
@@ -71,9 +77,10 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     }
 
 
-    fun validateMail(mail:String):LiveData<AlumnoEntity>{
-        return myRepository.validateMail(mail)
+    fun validateMail(correoElec:String):LiveData<AlumnoEntity>{
+        return myRepository.validateMail(correoElec)
     }
+
 
     fun getData(): LiveData<List<PonyEntity>>{
         myRepository.getPonyPhotoFromApi()  //llama a inet
@@ -95,9 +102,17 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     }
 
-    fun carrito(idClase: Int, idEmail: String){
-        myRepository.carrito(idClase, idEmail)
+    fun carrito(objeto: RelationAlumnoClase){
+        myRepository.carrito(objeto)
     }
+
+    fun insertNewPassword(newPass: String, emailUser: String?){
+       myRepository.insertNewPassword(newPass, emailUser)
+    }
+
+
+
+
 
 
 

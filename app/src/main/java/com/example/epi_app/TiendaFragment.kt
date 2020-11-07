@@ -5,16 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.epi_app.model.local.Tienda
 import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_team.*
 import kotlinx.android.synthetic.main.fragment_tienda.*
 
 
-class TiendaFragment : Fragment() {
+class TiendaFragment : Fragment(), TiendaAdapter.ToCLick {
 
     private val myViewModel:EpiViewModel by activityViewModels()
 
@@ -24,7 +26,7 @@ class TiendaFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        myAdapter3= TiendaAdapter()
+        myAdapter3= TiendaAdapter(this)
 
     }
 
@@ -48,5 +50,9 @@ class TiendaFragment : Fragment() {
         recyclerViewTienda.layoutManager= GridLayoutManager(context, 2)
         recyclerViewTienda.adapter=myAdapter3
         myAdapter3.updateAdapter(myViewModel.getDataTienda())
+    }
+
+    override fun showMsg(tienda: Tienda) {
+          Toast.makeText(context, "VENTA NO HABILITADA POR EL MOMENTO", Toast.LENGTH_SHORT).show()
     }
 }

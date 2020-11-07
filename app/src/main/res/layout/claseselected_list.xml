@@ -42,11 +42,11 @@
                 tools:text="fecha y hora" />
 
             <TextView
-                android:id="@+id/nivelReservado"
+                android:id="@+id/horaReservada"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-light"
-                tools:text="nivel"
+                tools:text="hora"
                 android:textColor="#000000"
                 android:textSize="20sp" />
 

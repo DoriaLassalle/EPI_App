@@ -1,6 +1,5 @@
 package com.example.epi_app
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,15 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.epi_app.model.local.AlumnoEntity
 import com.example.epi_app.model.local.ClaseEntity
+import com.example.epi_app.model.local.RelationAlumnoClase
 import com.example.epi_app.viewmodel.EpiViewModel
-import kotlinx.android.synthetic.main.clasedisponible_list.*
 import kotlinx.android.synthetic.main.fragment_reservar_clase.*
 
 
@@ -24,8 +21,8 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
 
     private val myViewModel:EpiViewModel by activityViewModels()
     lateinit var myAdapterReservar: ReservarClaseAdapter
-    lateinit var alumno:AlumnoEntity
-   lateinit var idAlumnoEmail:String
+    lateinit var idAlumnoEmail:String
+    private var idClaseElegida:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +52,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
 
         })
 
-        myViewModel.getAlumnoWithClase().observe(viewLifecycleOwner, Observer {
-            //myAdapter.UpdateAdapter(it)
 
-            Log.d("alumnocnclase", it.toString())
-
-        })
 
 
         botClaseHome.setOnClickListener {
@@ -75,24 +67,29 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         myViewModel.classSelect(claseInfo)                      //envio al viewmodel
         Log.d("clase eleg", claseInfo.toString())
 
-        val idClaseElegida=claseInfo.id             //extraigo el id(PK) de la clase selected
+         idClaseElegida=claseInfo.id                 //extraigo el id(PK) de la clase selected
+
+
 
                     //Traigo el alumno que ingresó a la app por su PK que es el mail-picked at loginfrag
         myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
            idAlumnoEmail=it
+            Log.d("content", it)
 
         })
                      //Valido que la clase sea seleccionada una sola vez
-        if (!claseInfo.alumnoEmailId.equals(idAlumnoEmail)) {
+      /* if (si no ha pinchadola clase entonces la guardo) {
 
             Toast.makeText(context, "CLASE N° ${claseInfo.id} SELECCIONADA", Toast.LENGTH_LONG)
                 .show()
 
-            myViewModel.carrito(idClaseElegida, idAlumnoEmail) //relaciono la clase elegida al alumno, envio a BD
+
 
         }else{
                 Toast.makeText(context, "YA SELECCIONASTE ESTA CLASE", Toast.LENGTH_LONG).show()
-        }
+        }*/
 
+        //relaciono la clase elegida al alumno, envio a BD
+        myViewModel.carrito(RelationAlumnoClase(email = idAlumnoEmail, id = idClaseElegida))
     }
 }

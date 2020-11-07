@@ -40,19 +40,18 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     }
 
-    fun getAlumnoWithClase():LiveData<List<RelationAlumnoClase>>{
+    fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>{
         return myClaseDao.getAlumnoWithClase()
-
     }
 
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
-
         return myAlumnoDao.validateUser(correo, contras)
     }
 
-    fun validateMail(mail:String): LiveData<AlumnoEntity>{
-        return myAlumnoDao.validateMail(mail)
+    fun validateMail(correoElec:String):LiveData<AlumnoEntity>{
+        return myAlumnoDao.validateMail(correoElec)
     }
+
 
     fun getAllPony(): LiveData<List<PonyEntity>>{
         return myPonyDao.getAllPony()
@@ -140,10 +139,10 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
                 "sin herraduras."))
         teamList.add(Team("CONSUELO BITTNER", "Veterinaria", R.drawable.logoepi, "Veterinaria" +
                 "favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
-                "sea pequeño."))
+                " sea pequeño."))
         teamList.add(Team("DOMINIQUE SUNKO", "Veterinaria", R.drawable.logoepi, "Veterinaria " +
                 "amiga de todos los Ponies y Caballos.\nEncargada de sus desparasitaciones , vacunas" +
-                "reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))
+                " reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))
 
         return teamList
 
@@ -190,9 +189,13 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         return ponyFaceList
     }
 
-    fun carrito(idClase: Int, idEmail: String)   = CoroutineScope(Dispatchers.IO).launch {
-        myClaseDao.insertIdAlumnoClase(idClase, idEmail)
+    fun carrito( objeto: RelationAlumnoClase)   = CoroutineScope(Dispatchers.IO).launch {
+        myClaseDao.insertRelation(objeto)
     }
+    fun insertNewPassword(newPass: String, emailUser: String?)= CoroutineScope(Dispatchers.IO).launch {
+        myAlumnoDao.insertNewPassword(newPass, emailUser)
+    }
+
 
 
 

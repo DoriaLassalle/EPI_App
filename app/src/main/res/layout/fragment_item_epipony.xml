@@ -28,6 +28,8 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="cursive"
                 android:textSize="30sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <Space

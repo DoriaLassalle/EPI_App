@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.epi_app.viewmodel.EpiViewModel
 import kotlinx.android.synthetic.main.fragment_pony.*
@@ -39,7 +40,7 @@ class PonyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val myRecycler = recyclerPony
-        myRecycler.layoutManager = LinearLayoutManager(context)
+        myRecycler.layoutManager = GridLayoutManager(context, 2)
         myRecycler.adapter = myAdapter
 
         myViewModel.getData().observe(viewLifecycleOwner, Observer {

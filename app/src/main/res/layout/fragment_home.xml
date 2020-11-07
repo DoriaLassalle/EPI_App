@@ -22,18 +22,7 @@
 
 
 
-            <TextView
-                android:id="@+id/welcome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/crushed"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="bienvenida" />
+
 
 
 
@@ -42,13 +31,13 @@
             android:layout_width="350dp"
             android:layout_height="90dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="3dp"
             app:cardElevation="8dp"
             android:focusable="true"
-            app:layout_constraintTop_toBottomOf="@id/welcome">
+            app:layout_constraintTop_toBottomOf="parent">
 
             <ImageView
                 android:id="@+id/reservarClase"
@@ -210,6 +199,18 @@
             android:textSize="24sp"
             android:fontFamily="@font/crushed"
             />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:src="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:src="@drawable/instagram" />
 
     </LinearLayout>
 

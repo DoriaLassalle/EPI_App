@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
                 Toast.makeText(context, "COMPLETA AMBOS CAMPOS", Toast.LENGTH_LONG).show()
 
             } else {
-
+                                    //envio el correo y passs ingresados a la bd para validar que existan
                 myViewModel.validateUser(loginMail.text.toString(), loginPassword.text.toString())
                     .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                         if (it == null) {
@@ -50,10 +50,13 @@ class LoginFragment : Fragment() {
                         } else {
 
                             myViewModel.select(it.email)
-                            myViewModel.selectName((it.name))  //traspaso el nombre
+                            myViewModel.selectName(it.name)  //traspaso el nombre para la bievenida
+
 
 
                             findNavController().navigate(R.id.action_LoginFragment_to_HomeFragment)
+
+                                Toast.makeText(context, "HOLA ${it.name} :)", Toast.LENGTH_LONG).show()
 
                         }
                     })

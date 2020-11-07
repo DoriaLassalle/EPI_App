@@ -18,11 +18,13 @@ interface AlumnoDao {
     @Query ("SElECT * FROM AlumnoEntity WHERE email=:correo AND password=:contras")
     fun validateUser(correo: String, contras: String): LiveData<AlumnoEntity>
 
+    @Query ("SElECT * FROM AlumnoEntity WHERE email=:correoElect")
+    fun validateMail(correoElect:String):LiveData<AlumnoEntity>
 
 
-    @Query("SELECT * FROM AlumnoEntity WHERE email=:mail")
-    fun validateMail(mail:String): LiveData<AlumnoEntity>
 
+    @Query("UPDATE alumnoentity SET password = :newPass WHERE email = :emailUser")
+    fun insertNewPassword(newPass: String, emailUser: String?): Int
 
 
 

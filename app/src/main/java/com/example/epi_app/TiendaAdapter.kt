@@ -5,12 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.epi_app.model.local.Team
 import com.example.epi_app.model.local.Tienda
-import kotlinx.android.synthetic.main.team_list.view.*
 import kotlinx.android.synthetic.main.tienda_list.view.*
 
-class TiendaAdapter:  RecyclerView.Adapter<TiendaAdapter.TiendaViewHolder>(){
+class TiendaAdapter(val callback: ToCLick):  RecyclerView.Adapter<TiendaAdapter.TiendaViewHolder>(){
 
     private var tiendaList= emptyList<Tienda>()
     fun updateAdapter(myList:List<Tienda>){
@@ -23,6 +21,13 @@ class TiendaAdapter:  RecyclerView.Adapter<TiendaAdapter.TiendaViewHolder>(){
         val itemNombreProd=itemView.tvNombreProducto
         val itemPrecioProd=itemView.tvPrecioProducto
         val itemFotoProd=itemView.ivProducto
+
+        val click=itemView.setOnClickListener {
+            callback.showMsg(tiendaList[adapterPosition])
+
+
+        }
+
 
     }
 
@@ -44,4 +49,8 @@ class TiendaAdapter:  RecyclerView.Adapter<TiendaAdapter.TiendaViewHolder>(){
     }
 
     override fun getItemCount()= tiendaList.size
+
+  interface ToCLick{
+      fun showMsg(tienda: Tienda)
+  }
 }

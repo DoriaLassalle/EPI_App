@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.epi_app.model.local.ClaseEntity
+import com.example.epi_app.viewmodel.EpiViewModel
 
 import kotlinx.android.synthetic.main.claseselected_list.view.*
 
@@ -21,7 +22,7 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
 
     inner class ClaseSelViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var fechaClaseReser = itemView.fechaYhoraReservada
-        var categoriaReser = itemView.nivelReservado
+        var horaReser = itemView.horaReservada
         var ponyReser=itemView.ponyReservado
 
     }
@@ -34,14 +35,11 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
     }
 
     override fun onBindViewHolder(holder: ClaseSelectedAdapter.ClaseSelViewHolder, position: Int) {
-
-
         val selectedClass=claseSelectedList[position]
 
-
-        holder.fechaClaseReser.text=//traer lo guardado
-        holder.categoriaReser.text
-        holder.ponyReser.text
+        holder.fechaClaseReser.text=selectedClass.dia
+        holder.horaReser.text=selectedClass.hora
+        //holder.ponyReser.text=selectedClass.cupos
 
     }
 

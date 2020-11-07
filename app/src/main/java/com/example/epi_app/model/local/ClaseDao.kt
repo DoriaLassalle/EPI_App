@@ -12,13 +12,25 @@ interface ClaseDao {
     @Query("SELECT * FROM clase")
     fun getAllClases():LiveData<List<ClaseEntity>>
 
-    @Transaction
+   /* @Transaction
     @Query("SELECT * FROM AlumnoEntity")
-    fun getAlumnoWithClase(): LiveData<List<RelationAlumnoClase>>
+    fun getAlumnoWithClase(): LiveData<List<RelationAlumnoClase>>*/
+
+    @Transaction
+    @Query ("SELECT * FROM AlumnoEntity")
+    fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>
+
+    @Transaction
+    @Query ("SELECT * FROM clase")
+    fun getClasesConAlumnos ():LiveData<List<ClaseWithAlumnos>>
 
 
-    @Query("UPDATE clase SET alumnoEmailId = :idEmail WHERE id = :id")
-    fun insertIdAlumnoClase(id: Int, idEmail: String?): Int
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertRelation(objeto: RelationAlumnoClase)
+
+
+   /* @Query("UPDATE clase SET alumnoEmailId = :idEmail WHERE id = :id")
+    fun insertIdAlumnoClase(id: Int, idEmail: String?): Int*/
 
 
 }

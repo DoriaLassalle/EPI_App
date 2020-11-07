@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -38,13 +39,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-                    //recibo el nombre del usuario que ingresó a la app-picked at loginfragment
+         /*           //recibo el nombre del usuario que ingresó a la app-picked at loginfragment
         myViewModel.selectedName.observe(viewLifecycleOwner, Observer {
             Log.d("Que hay?", it)
 
-            welcome.text=("HOLA $it :)")
+                    Toast.makeText(context, "HOLA $it :)", Toast.LENGTH_LONG).show()
 
-        })
+        })*/
 
 
 

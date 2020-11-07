@@ -94,6 +94,8 @@
     <string name="nuestros_caballos">NUESTROS CABALLOS</string>
     <string name="team_humano">TEAM HUMANO</string>
     <string name="team_equino">TEAM EQUINO</string>
+    <string name="alumnos_registrados">ALUMNOS REGISTRADOS</string>
+    <string name="ingresar_clase">Ingresar clase</string>
 
 
     <string-array name="level_list">
