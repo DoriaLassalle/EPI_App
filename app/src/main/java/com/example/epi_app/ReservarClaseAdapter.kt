@@ -50,6 +50,7 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
         holder.categoria.text=("Nivel: ${newClass.nivel}")
         holder.cupos.text=("Cupos Disponibles: ${newClass.cupos}")
 
+
     }
 
     override fun getItemCount()= claseList.size

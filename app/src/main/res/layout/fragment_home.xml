@@ -199,18 +199,26 @@
             android:textSize="24sp"
             android:fontFamily="@font/crushed"
             />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:id="@+id/ivFacebook"
+            android:layout_width="200dp"
             android:layout_height="30dp"
-            android:src="@drawable/facebook" />
+            android:layout_marginStart="110dp"
+            android:src="@drawable/facebook"
+            android:clickable="true"/>
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
+            android:id="@+id/ivInstagram"
+            android:layout_width="200dp"
             android:layout_height="30dp"
-            android:src="@drawable/instagram" />
+            android:layout_marginStart="110dp"
+            android:src="@drawable/instagram"
+            android:clickable="true"/>
+
 
     </LinearLayout>
 

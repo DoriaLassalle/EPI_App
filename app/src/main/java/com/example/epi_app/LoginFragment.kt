@@ -49,7 +49,7 @@ class LoginFragment : Fragment() {
                                 .show()
                         } else {
 
-                            myViewModel.select(it.email)
+                            myViewModel.select(it.email)        //traspado el mail-pk
                             myViewModel.selectName(it.name)  //traspaso el nombre para la bievenida
 
 

@@ -33,6 +33,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     fun getAlumnos()= CoroutineScope(Dispatchers.IO).launch {
         myAlumnoDao.getAllAlumnos()
+
     }
 
     fun getAllClases():LiveData<List<ClaseEntity>>{
@@ -43,11 +44,11 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
     fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>{
         return myClaseDao.getAlumnoWithClase()
     }
-
+                            //para validar que el usuario existe en la bd
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myAlumnoDao.validateUser(correo, contras)
     }
-
+                            //para cgh de contraseña
     fun validateMail(correoElec:String):LiveData<AlumnoEntity>{
         return myAlumnoDao.validateMail(correoElec)
     }
@@ -87,20 +88,6 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
             }
         })
 
-        /* service.onSuccess {
-            when(it.code()) {
-                in 200..299 -> it.body()?.let {
-                    val data = convertPonyList(it.hits)
-
-                    myPonyDao.insertListPony(data)
-                }
-                in 300..599 -> Log.e("ERROR", it.errorBody().toString())
-                else -> Log.d("ERROR", it.errorBody().toString())
-            }
-        }
-        service.onFailure {
-            Log.e("holi", it.message.toString())
-        }*/
     }
 
         //convertir lista que llega de inet que es de Hit, a una lista de objs PonyEntity que tiene 3 parametros:
@@ -163,28 +150,66 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
         return tiendaList
 
-
     }
 
     fun getDataHorse():List<EpiPony>{
         val ponyFaceList:ArrayList<EpiPony> =ArrayList()
 
         ponyFaceList.add(
-            EpiPony(R.drawable.facehakan, "Hakán", "caballito hop",
-        R.drawable.fullhakan)
+            EpiPony(R.drawable.facehakan, "Hakán", "Llegó a nuestra familia en el " +
+                    "verano del 2019, venía sólo por unos meses y se quedó para siempre.\nLe gusta " +
+                    "saltar, es muy rápido y es bueno para comer. Con alumnos nuevos es muy tranquilo" +
+                    " y paciente. Apto para todos los niveles.", R.drawable.fullhakan)
         )
         ponyFaceList.add(
-            EpiPony(R.drawable.facemilodon, "Milodón", "Le encanta su cueva",
-        R.drawable.fullmilodon)
+            EpiPony(R.drawable.facemilodon, "Milodón", "Él es nuestro crack! Caballo " +
+                    "de transición para jinetes avanzados que luego de aprender y avanzar en ponies," +
+                    " pueden montar al rey de la casa.\nLe encanta saltar, es muy rápido, valiente " +
+                    "y franco.",  R.drawable.fullmilodon)
         )
         ponyFaceList.add(
-            EpiPony(R.drawable.facepapaya, "Papaya", "Dulce y jugosa",
-            R.drawable.fullpapaya)
+            EpiPony(
+                R.drawable.facepapaya, "Papaya", "Tiene 5 años y nació en la Epi y es " +
+                        "hija de Vainilla.\nSúper buena yeguita para jinetes de nivel intermedio y" +
+                        "avanzado. El 2019 ganó el premio \"Binomio mejor presentado\" en el Nacional" +
+                        " de Escuelas y ha ganado algunos primeros lugares en adiestramiento nivel " +
+                        "escuela.", R.drawable.fullpapaya
+            )
         )
         ponyFaceList.add(
-            EpiPony(R.drawable.faceragnar, "Ragnar", "Pony vikingo",
-        R.drawable.fullragnar)
+            EpiPony(R.drawable.faceragnar, "Ragnar", "Es el caballo favorito de todos" +
+                    " aunque sólo lo montan los profes.\nTodos lo quieren porque siempre esta " +
+                    "mirando a los niños que llegan y pidiendo zanhorias. Le gusta que le rasquen " +
+                    "la frente y las orejas. Solo para jinetes nivel avanzado.",R.drawable.fullragnar)
         )
+
+       /* ponyFaceList.add(
+            EpiPony(R.drawable.facemorena, "Morena", "Morena Mía es su nombre original de la Epi." +
+                " Llegó en el verano del 2020 y no se fue más. Es una santa, muy tierna y  buen " +
+                "caracter. Apta para todos los niveles.", R.drawable.fullmorena))
+
+        ponyFaceList.add(
+            EpiPony(R.drawable.facevainilla, "Vainilla", "Llegó a la Epi hace mucho años" +
+                    " y venía con una sorpresa...la Papaya. Es nuestra reina, tiene caracter fuerte " +
+                    "como toda reina pero tiene un corazón dulce y leal como buen caballo. " +
+                    "Apta para jinetes nivel básico, intermedio y avanzado.", R.drawable.fullvainilla))
+
+        ponyFaceList.add(
+            EpiPony(R.drawable.facesalem, "Salem", "Es el abuelito de la familia. Llegó " +
+                    "con 18 años a darle equilibrio a la manada. Es un amor, es un caballo paciente," +
+                    " obediente hasta con los más pequeños. Apto para todos los niveles", R.drawable.fullsalem))
+
+        ponyFaceList.add(
+            EpiPony(R.drawable.facefrodo, "Frodo", "También es abuelito pero no sabemos" +
+                    " con exactitud su edad. Está en la Epi desde 2014, es uno de los fundadores" +
+                    " junto con Cururo. Tiene excelente carácter y es el encargado de recibir a los" +
+                    " baby ponies hasta los 5 años.", R.drawable.fullfrodo))
+
+        ponyFaceList.add(
+            EpiPony(R.drawable.facecururo, "Cururo", "Fundador de la Epi con otros " +
+                    "ponies que ya no están. Es el encargado de recibir a los niños nivel baby pony " +
+                    "y enseñarles todo para que  pasen a ponies más grandes.", R.drawable.fullcururo))*/
+
 
         return ponyFaceList
     }
@@ -192,6 +217,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
     fun carrito( objeto: RelationAlumnoClase)   = CoroutineScope(Dispatchers.IO).launch {
         myClaseDao.insertRelation(objeto)
     }
+            //actualizar la contraseña
     fun insertNewPassword(newPass: String, emailUser: String?)= CoroutineScope(Dispatchers.IO).launch {
         myAlumnoDao.insertNewPassword(newPass, emailUser)
     }

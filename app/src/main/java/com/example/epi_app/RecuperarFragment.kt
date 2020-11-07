@@ -35,8 +35,7 @@ class RecuperarFragment : Fragment() {
 
        botCambiarPassword.setOnClickListener {
 
-
-                if (recupMailRegist.text.isBlank()||chgPass.text.isBlank()||chgPass2.text.isBlank()) {
+           if (recupMailRegist.text.isBlank()||chgPass.text.isBlank()||chgPass2.text.isBlank()) {
 
                     Toast.makeText(context, "COMPLETA TODOS LOS CAMPOS", Toast.LENGTH_LONG).show()
 
@@ -47,7 +46,7 @@ class RecuperarFragment : Fragment() {
                 }else{
                     myViewModel.validateMail(recupMailRegist.text.toString()).observe(viewLifecycleOwner,
                     Observer {
-                        Log.d("que trae?", it.toString())
+                        Log.d("trae el mail?", it.toString())
 
                         if (it==null){
 

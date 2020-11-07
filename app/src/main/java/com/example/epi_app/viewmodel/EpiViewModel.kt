@@ -71,12 +71,12 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         return myRepository.getAlumnoWithClase()
     }
 
-
+                //validar si el ususario esta en la bd
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myRepository.validateUser(correo, contras)
     }
 
-
+                //validar si esxite mail para chg de contraseña
     fun validateMail(correoElec:String):LiveData<AlumnoEntity>{
         return myRepository.validateMail(correoElec)
     }
@@ -105,7 +105,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     fun carrito(objeto: RelationAlumnoClase){
         myRepository.carrito(objeto)
     }
-
+                //actualizar la contraseña -chg
     fun insertNewPassword(newPass: String, emailUser: String?){
        myRepository.insertNewPassword(newPass, emailUser)
     }

@@ -93,7 +93,7 @@
             android:textAlignment="textEnd"
             android:fontFamily="@font/crushed"
             android:textColor="#950206"
-            android:textIsSelectable="true"
+            android:clickable="true"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/btnRegistrar"/>
 

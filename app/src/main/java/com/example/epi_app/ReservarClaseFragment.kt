@@ -46,13 +46,11 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         myRecycler.layoutManager=LinearLayoutManager(context)
         myRecycler.adapter=myAdapterReservar
 
-                //muestro las clases disponibles que ingresó el admin
+                //muestro las clases disponibles -que ingresó el admin
         myViewModel.getAllClases().observe(viewLifecycleOwner, Observer {
         myAdapterReservar.UpdateAdapter(it)
 
         })
-
-
 
 
         botClaseHome.setOnClickListener {
@@ -63,12 +61,11 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         }
     }
 
-    override fun passClaseInfo(claseInfo: ClaseEntity){       //tengo la clase que selecciono y sus datos
+    override fun passClaseInfo(claseInfo: ClaseEntity){       //tengo la clase que seleccionó user y sus datos
         myViewModel.classSelect(claseInfo)                      //envio al viewmodel
         Log.d("clase eleg", claseInfo.toString())
 
          idClaseElegida=claseInfo.id                 //extraigo el id(PK) de la clase selected
-
 
 
                     //Traigo el alumno que ingresó a la app por su PK que es el mail-picked at loginfrag
@@ -83,9 +80,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
             Toast.makeText(context, "CLASE N° ${claseInfo.id} SELECCIONADA", Toast.LENGTH_LONG)
                 .show()
 
-
-
-        }else{
+         }else{
                 Toast.makeText(context, "YA SELECCIONASTE ESTA CLASE", Toast.LENGTH_LONG).show()
         }*/
 
