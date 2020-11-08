@@ -97,6 +97,20 @@
     <string name="alumnos_registrados">ALUMNOS REGISTRADOS</string>
     <string name="ingresar_clase">Ingresar clase</string>
     <string name="ver_clases">Ver clases</string>
+    <string name="titulo_dialog">Administrador de Clases</string>
+    <string name="msg_dialog">Qué desea hacer con la clase seleccionada?</string>
+    <string name="eliminar_clase">ELIMINAR</string>
+    <string name="modificar_clase">MODIFICAR</string>
+    <string name="cancelar">CANCELAR</string>
+
+    <string name="titulo_dialog2">Reservar Clases</string>
+    <string name="msg_dialog2">Deseas agregar la clase seleccionada?</string>
+    <string name="reserv_clase">AGREGAR</string>
+    <string name="cancelar2">CANCELAR</string>
+    <string name="hora_de_la_clase_12_00">Hora de la Clase (12:00)</string>
+    <string name="cupos_disponibles">Cupos disponibles</string>
+    <string name="facebook">facebook</string>
+    <string name="instagram">instagram</string>
 
 
     <string-array name="level_list">

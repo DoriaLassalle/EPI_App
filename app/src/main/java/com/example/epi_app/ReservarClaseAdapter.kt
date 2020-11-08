@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.epi_app.model.local.ClaseEntity
 import kotlinx.android.synthetic.main.clasedisponible_list.*
@@ -15,7 +16,7 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
     private var claseList= emptyList<ClaseEntity>()
 
     fun UpdateAdapter(list:List<ClaseEntity>){
-        claseList=list;
+        claseList=list
         notifyDataSetChanged()
 
     }
@@ -57,7 +58,7 @@ class ReservarClaseAdapter(val callback: PassData) : RecyclerView.Adapter<Reserv
 
 
     interface PassData {
-        fun passClaseInfo(claseInfo: ClaseEntity){   //aqui recibo lo que selecciono
+        fun passClaseInfo(claseInfo: ClaseEntity){   //aqui recibo el item que seleccionó
 
         }
 

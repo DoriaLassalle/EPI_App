@@ -1,6 +1,8 @@
 package com.example.epi_app
 
+import android.app.ProgressDialog.show
 import android.os.Bundle
+import android.view.Gravity.TOP
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -52,14 +54,16 @@ class LoginFragment : Fragment() {
                                 .show()
                         } else {
 
-                            myViewModel.select(it.email)        //traspado el mail-pk
+                            myViewModel.select(it.email)        //traspaso el mail-pk
                             myViewModel.selectName(it.name)  //traspaso el nombre para la bievenida
 
 
 
                             findNavController().navigate(R.id.action_LoginFragment_to_HomeFragment)
 
-                                Toast.makeText(context, "HOLA ${it.name} :)", Toast.LENGTH_LONG).show()
+                                val toast=Toast.makeText(context, "HOLA ${it.name} :)", Toast.LENGTH_LONG)
+                                    toast.setGravity(TOP, 50, 10)
+                                    toast.show()
 
                         }
                     })

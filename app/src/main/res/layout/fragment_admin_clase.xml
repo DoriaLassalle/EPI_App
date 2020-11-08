@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Hora de la Clase (12:00)"
+            android:hint="@string/hora_de_la_clase_12_00"
             android:importantForAutofill="no" />
 
 
@@ -49,8 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/nombre_caballos_disponibles"
+            android:inputType="number"
+            android:hint="@string/cupos_disponibles"
             android:importantForAutofill="no" />
 
 

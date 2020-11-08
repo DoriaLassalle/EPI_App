@@ -13,11 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.epi_app.model.local.AlumnoWithClases
 import com.example.epi_app.model.local.ClaseEntity
-import com.example.epi_app.model.local.PonyEntity
-import com.example.epi_app.model.local.RelationAlumnoClase
-import com.example.epi_app.model.network.Hit
 import com.example.epi_app.viewmodel.EpiViewModel
-import kotlinx.android.synthetic.main.fragment_clase_selected.*
 import kotlinx.android.synthetic.main.fragment_clase_selected.*
 
 
@@ -66,15 +62,19 @@ class ClaseReservadaFragment : Fragment() {
             userId=it
 
         })
+
         myViewModel.getAlumnoWithClase().observe(viewLifecycleOwner, Observer {
             Log.d("que hay aqui", it.toString())
-            misClasesAdapter.UpdateAdapter(convertListToShow(it))
+            misClasesAdapter.UpdateAdapter( convertListToShow(it))
+
 
             //muestra la ultima clase de cada alumno porque el it trae a todos los alumnos que tienen
             //clase, con el detalle de cada clase
 
             //ahora no se que weada muestra porque muestra 3 elementos pero no coinciden con las
             //clases que eligió el alumno.
+
+            //trae la 4 y 5 dos veces y la 10 una vez, muestra la 5 dos veces y la 10
 
 
         })

@@ -115,13 +115,13 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
             "Jinete desde muy pequeño, su interés se inclina 100% a la rama de adiestramiento." +
                     "\nEn proceso de formación Coach FEI."))
         teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profesor Ayudante\n Desde 2016", R.drawable.jp,
-            "Desde muy pequeño ligado a la naturaleza, el campo y los caballos.\nMejor amigo de" +
+            "Desde muy pequeño ligado a la naturaleza,\nel campo y los caballos. Mejor amigo \nde" +
                     "Cururo.\nActualmente termina su carrera de Ingeniero en Biotecnología, por eso sólo lo " +
                     "vemos los fines de semana."))
         teamList.add(
             Team("JORGE NEGRETE", "Ordenanza\nEn la EPI desde 2016", R.drawable.jorge,
         "Encargado de cuidar a nuestros Ponies y Caballos, tenerlos bien alimentados, limpios" +
-                "y felices."))
+                "\ny felices."))
         teamList.add(Team("DANIELA", "Especialista en Barefooting Equino", R.drawable.logoepi,
         "Mantiene los cascos de nuestros Ponies y Caballos sanos, bien despalmados, aplomados y " +
                 "sin herraduras."))
@@ -129,7 +129,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
                 "favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
                 " sea pequeño."))
         teamList.add(Team("DOMINIQUE SUNKO", "Veterinaria", R.drawable.logoepi, "Veterinaria " +
-                "amiga de todos los Ponies y Caballos.\nEncargada de sus desparasitaciones , vacunas" +
+                "amiga de todos los Ponies\ny Caballos.\nEncargada de sus desparasitaciones , vacunas" +
                 " reglamentarias y vitaminas. Mantiene todos los carné y pasaportes equinos al día."))
 
         return teamList
@@ -158,30 +158,30 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
         ponyFaceList.add(
             EpiPony(R.drawable.facehakan, "Hakán", "Llegó a nuestra familia en el " +
-                    "verano del 2019, venía sólo por unos meses y se quedó para siempre.\nLe gusta " +
-                    "saltar, es muy rápido y es bueno para comer. Con alumnos nuevos es muy tranquilo" +
-                    " y paciente. Apto para todos los niveles.", R.drawable.fullhakan)
+                    "verano del 2019, venía sólo por unos meses y se quedó para siempre. Le gusta " +
+                    "saltar, es muy rápido\ny bueno para comer. Con alumnos nuevos es muy tranquilo" +
+                    " y paciente.\nApto para todos los niveles.", R.drawable.fullhakan)
         )
         ponyFaceList.add(
             EpiPony(R.drawable.facemilodon, "Milodón", "Él es nuestro crack! Caballo " +
-                    "de transición para jinetes avanzados que luego de aprender y avanzar en ponies," +
-                    " pueden montar al rey de la casa.\nLe encanta saltar, es muy rápido, valiente " +
+                    "de transición para jinetes avanzados que, luego de aprender y avanzar en ponies," +
+                    " pueden montar al rey de la casa. Le encanta saltar, es muy rápido,\nvaliente " +
                     "y franco.",  R.drawable.fullmilodon)
         )
         ponyFaceList.add(
             EpiPony(
-                R.drawable.facepapaya, "Papaya", "Tiene 5 años y nació en la Epi y es " +
-                        "hija de Vainilla.\nSúper buena yeguita para jinetes de nivel intermedio y" +
-                        "avanzado. El 2019 ganó el premio \"Binomio mejor presentado\" en el Nacional" +
+                R.drawable.facepapaya, "Papaya", "Tiene 5 años, nació en la Epi y es " +
+                        "hija de Vainilla. Súper buena yegüita para\njinetes de nivel intermedio y" +
+                        "avanzado.\nEl 2019 ganó el premio \"Binomio mejor presentado\" en el Nacional" +
                         " de Escuelas y ha ganado algunos primeros lugares en adiestramiento nivel " +
                         "escuela.", R.drawable.fullpapaya
             )
         )
         ponyFaceList.add(
             EpiPony(R.drawable.faceragnar, "Ragnar", "Es el caballo favorito de todos" +
-                    " aunque sólo lo montan los profes.\nTodos lo quieren porque siempre esta " +
-                    "mirando a los niños que llegan y pidiendo zanhorias. Le gusta que le rasquen " +
-                    "la frente y las orejas. Solo para jinetes nivel avanzado.",R.drawable.fullragnar)
+                    " aunque sólo\nlo montan los profes. Todos lo quieren \nporque siempre esta " +
+                    "mirando a los niños que llegan y les pide zanhorias. Le gusta que le rasquen " +
+                    "la frente y las orejas.\nSolo para jinetes nivel avanzado.",R.drawable.fullragnar)
         )
 
        /* ponyFaceList.add(
@@ -222,8 +222,17 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
     fun insertNewPassword(newPass: String, emailUser: String?)= CoroutineScope(Dispatchers.IO).launch {
         myAlumnoDao.insertNewPassword(newPass, emailUser)
     }
+            //traigo los cupos disponibles de la clase y le resto el que tomo el usuario, envio
+            //to update los cupos restantes
+    fun updateCupos(cuposDisponibles: Int, idClaseElegida:Int)= CoroutineScope(Dispatchers.IO).launch {
+       val cuposRestantes=cuposDisponibles-1
 
+        myClaseDao.updateCuposClases(cuposRestantes, idClaseElegida)
+    }
 
+    fun deleteClase(claseToDelete:Int)= CoroutineScope(Dispatchers.IO).launch{
+        myClaseDao.deleteClase(claseToDelete)
+    }
 
 
 

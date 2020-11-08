@@ -9,7 +9,7 @@ import com.example.epi_app.model.local.ClaseWithAlumnos
 import kotlinx.android.synthetic.main.adminverclases_list.view.*
 import kotlinx.android.synthetic.main.clasedisponible_list.view.*
 
-class AdminVerClasesAdapter:RecyclerView.Adapter<AdminVerClasesAdapter.VerClasesViewHolder>() {
+class AdminVerClasesAdapter(val callbackAdmin: AdminSelClass ):RecyclerView.Adapter<AdminVerClasesAdapter.VerClasesViewHolder>() {
 
     private var clasesList= emptyList<ClaseEntity>()
 
@@ -24,6 +24,9 @@ class AdminVerClasesAdapter:RecyclerView.Adapter<AdminVerClasesAdapter.VerClases
         var teacherClase = itemView.adminProfeDispo
         var catClase = itemView.adminNivelDispo
         var cuposClase = itemView.adminPonyDispo
+        val click=itemView.setOnClickListener {
+            callbackAdmin.showDialog(clasesList[adapterPosition])
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerClasesViewHolder {
@@ -45,6 +48,10 @@ class AdminVerClasesAdapter:RecyclerView.Adapter<AdminVerClasesAdapter.VerClases
     }
 
     override fun getItemCount()=clasesList.size
+
+    interface AdminSelClass{
+        fun showDialog(adminClase: ClaseEntity)
+    }
 
 
 }

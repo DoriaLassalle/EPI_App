@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.epi_app.model.local.AlumnoWithClases
 import com.example.epi_app.model.local.ClaseEntity
-import com.example.epi_app.viewmodel.EpiViewModel
 
 import kotlinx.android.synthetic.main.claseselected_list.view.*
 
@@ -14,7 +14,7 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
     private var claseSelectedList= emptyList<ClaseEntity>()
 
 
-    fun UpdateAdapter(list:List<ClaseEntity>){
+    fun UpdateAdapter(list: List<ClaseEntity>){
         claseSelectedList=list
         notifyDataSetChanged()
 
@@ -39,7 +39,7 @@ class ClaseSelectedAdapter:RecyclerView.Adapter<ClaseSelectedAdapter.ClaseSelVie
 
         holder.fechaClaseReser.text=selectedClass.dia
         holder.horaReser.text=selectedClass.hora
-        holder.ponyReser.text=selectedClass.id.toString() // cambiarlo por los cupos
+        holder.ponyReser.text=selectedClass.id.toString() // cambiarlo por los cupos o no mostrar
 
     }
 

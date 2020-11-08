@@ -65,6 +65,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:textColor="#CB1116"
                 android:textSize="20sp"
+                android:textStyle="italic"
                 android:textAlignment="center"
                 tools:text="nivel" />
 
@@ -75,6 +76,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="@string/pony_o_cupo"
                 android:textColor="#CB1116"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 

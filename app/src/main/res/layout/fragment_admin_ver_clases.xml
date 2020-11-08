@@ -5,31 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".AdminVerClasesFragment">
 
-    <Button
-        android:id="@+id/botModificarClase"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="210dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="550dp"
-        android:text="@string/modificar"
-        android:fontFamily="@font/crushed"
-        android:textSize="20sp"
-        />
 
-    <Button
-        android:id="@+id/botEliminarClase"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/btn_redondeado"
-        android:layout_marginTop="550dp"
-        android:text="@string/eliminar"
-        android:fontFamily="@font/crushed"
-        android:textSize="20sp"
-        />
+
 
 
     <Button
@@ -48,6 +25,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAdminVerClases"
         android:layout_width="match_parent"
-        android:layout_height="542dp" />
+        android:layout_height="580dp" />
 
 </FrameLayout>

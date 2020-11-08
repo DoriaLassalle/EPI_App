@@ -1,5 +1,7 @@
 package com.example.epi_app
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.epi_app.model.local.ClaseEntity
 import com.example.epi_app.model.local.RelationAlumnoClase
 import com.example.epi_app.viewmodel.EpiViewModel
+import kotlinx.android.synthetic.main.adminverclases_list.*
 import kotlinx.android.synthetic.main.fragment_reservar_clase.*
 
 
@@ -22,6 +25,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
     private val myViewModel:EpiViewModel by activityViewModels()
     lateinit var myAdapterReservar: ReservarClaseAdapter
     lateinit var idAlumnoEmail:String
+    private var cuposDisponibles:Int=0
     private var idClaseElegida:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +35,7 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
 
     }
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_reservar_clase, container, false)
     }
@@ -57,33 +59,56 @@ class ReservarClaseFragment : Fragment(), ReservarClaseAdapter.PassData{
         botVerMisClases.setOnClickListener {
             findNavController().navigate(R.id.action_reservarClaseFragment_to_claseReservadaFragment)
         }
+
     }
 
-    override fun passClaseInfo(claseInfo: ClaseEntity){       //tengo la clase que seleccionó user y sus datos
+    override fun passClaseInfo(claseInfo: ClaseEntity) {       //tengo la clase que seleccionó user y sus datos
         myViewModel.classSelect(claseInfo)                      //envio al viewmodel
         Log.d("clase eleg", claseInfo.toString())
 
-         idClaseElegida=claseInfo.id                 //extraigo el id(PK) de la clase selected
+        idClaseElegida = claseInfo.id                //extraigo el id(PK) de la clase selected
+        cuposDisponibles = claseInfo.cupos.toInt()
 
-
-                    //Traigo el alumno que ingresó a la app por su PK que es el mail-picked at loginfrag
+        //Traigo el alumno que ingresó a la app por su PK que es el mail-picked at loginfrag
         myViewModel.selectedRecibir.observe(viewLifecycleOwner, Observer {
-           idAlumnoEmail=it
+            idAlumnoEmail = it
             Log.d("content", it)
-
         })
 
-      /* if (si no ha pinchadola clase entonces la guardo) {
+        if (cuposDisponibles == 0) {
+            Toast.makeText(context, ":( ESTA CLASE YA NO TIENE CUPOS", Toast.LENGTH_LONG).show()
 
-            Toast.makeText(context, "CLASE N° ${claseInfo.id} SELECCIONADA", Toast.LENGTH_LONG)
-                .show()
+        } else {
 
-         }else{
-                Toast.makeText(context, "YA SELECCIONASTE ESTA CLASE", Toast.LENGTH_LONG).show()
-        }*/
+            val managerDialog2: AlertDialog? = activity?.let {
+                val builder2 = AlertDialog.Builder(it)
+                builder2.apply {
+                    setPositiveButton(
+                        R.string.reserv_clase,
+                        DialogInterface.OnClickListener { dialog, id ->
 
+                            //relaciono la clase elegida al alumno, envío a BD
+                            myViewModel.carrito(RelationAlumnoClase
+                                (email = idAlumnoEmail, id = idClaseElegida))
 
-        //relaciono la clase elegida al alumno, envio a BD
-        myViewModel.carrito(RelationAlumnoClase(email = idAlumnoEmail, id = idClaseElegida))
+                            //envio los cupos y el id de la clase to update los cupos
+                            myViewModel.updateCupos(cuposDisponibles, idClaseElegida)
+
+                            Toast.makeText(context, "CLASE N° ${claseInfo.id} AGREGADA",
+                                Toast.LENGTH_SHORT).show()
+
+                        })
+                    setNegativeButton(R.string.cancelar2,
+                        DialogInterface.OnClickListener { dialog, id ->
+                        })
+                }
+                builder2.setTitle(R.string.titulo_dialog2)
+                builder2.setMessage("Deseas agregar la clase $idClaseElegida?")
+                builder2.create()
+                builder2.show()
+            }
+
+        }//FALTA LIMITAR EL CLICK ENLA CLASE PARA QUE NO LA SELECCIONE 2 VECES, YA QUE DESCUENTA OTRO CUPO
     }
+
 }

@@ -110,6 +110,15 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
        myRepository.insertNewPassword(newPass, emailUser)
     }
 
+    fun updateCupos(cuposDisponibles: Int, idClaseElegida: Int){
+        myRepository.updateCupos(cuposDisponibles, idClaseElegida)
+    }
+
+    fun deleteClase(claseToDelete:Int){
+        myRepository.deleteClase(claseToDelete)
+    }
+
+
 
 
 
