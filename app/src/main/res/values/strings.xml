@@ -45,7 +45,7 @@
     <string name="nosotros">NOSOTROS</string>
     <string name="reservar_clase">RESERVAR CLASE</string>
     <string name="galeria_imagen">TODO</string>
-    <string name="admin">Admin</string>
+    <string name="admin">APP MANAGER</string>
     <string name="menuimg">TODO</string>
     <string name="menuimg2">TODO</string>
     <string name="menuimg3">TODO</string>
@@ -53,6 +53,7 @@
     <string name="tv1">TextView</string>
     <string name="tv2">TextView</string>
     <string name="back">Volver</string>
+    <string name="ver_clases_alum">VER CLASES CON ALUMNOS</string>
     <string name="ponyindividual">TODO</string>
     <string name="tv3">TextView</string>
     <string name="backTogallery">Volver a la Galería</string>
@@ -84,7 +85,7 @@
     <string name="nivel">Nivel</string>
     <string name="ver_mis_clases">ver mis clases</string>
     <string name="agendar_clase">agendar clase</string>
-    <string name="reservaste">TU CLASE PARA EL DÍA:</string>
+    <string name="reservaste">UNA CLASE PARA EL DÍA:</string>
     <string name="clases_disponibles">CLASES DISPONIBLES</string>
     <string name="tus_clases">TUS CLASES</string>
     <string name="pony_o_cupo">pony</string>
@@ -111,6 +112,9 @@
     <string name="cupos_disponibles">Cupos disponibles</string>
     <string name="facebook">facebook</string>
     <string name="instagram">instagram</string>
+    <string name="confirmar_y_pagar">Confirmar y Pagar</string>
+    <string name="titulo_clases_elegidas">LAS CLASES QUE ELEGISTE SON:</string>
+    <string name="precio">$18.000</string>
 
 
     <string-array name="level_list">

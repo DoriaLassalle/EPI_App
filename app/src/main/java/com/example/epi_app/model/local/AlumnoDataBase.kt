@@ -5,7 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [AlumnoEntity::class, PonyEntity::class, ClaseEntity::class, RelationAlumnoClase::class],  version = 1)
+@Database(entities = [AlumnoEntity::class, PonyEntity::class, ClaseEntity::class,
+    RelationAlumnoClase::class],  version = 1)
+
  abstract class AlumnoDataBase: RoomDatabase() {
 
     abstract fun alumnoDao(): AlumnoDao
@@ -15,7 +17,6 @@ import androidx.room.RoomDatabase
     companion object {
         @Volatile
         private var INSTANCE: AlumnoDataBase?=null
-
 
         fun getDataBase(context: Context): AlumnoDataBase {
             val tempInstance = INSTANCE

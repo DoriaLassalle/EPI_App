@@ -13,7 +13,6 @@ interface ClaseDao {
     fun getAllClases(): LiveData<List<ClaseEntity>>
 
 
-
     @Transaction
     @Query ("SELECT * FROM alumnoentity ")
     fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>
@@ -32,6 +31,7 @@ interface ClaseDao {
 
     @Query("DELETE FROM clase WHERE id=:claseToDelete")
     fun deleteClase(claseToDelete:Int)
+
 
 
    /* @Query("UPDATE clase SET alumnoEmailId = :idEmail WHERE id = :id")

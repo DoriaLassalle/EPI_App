@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.epi_app.LoginFragment"
+        android:name="com.example.epi_app.view.LoginFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/RegisterFragment"
-        android:name="com.example.epi_app.RegisterFragment"
+        android:name="com.example.epi_app.view.RegisterFragment"
         android:label="@string/register_fragment_label"
         tools:layout="@layout/fragment_register">
 
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.example.epi_app.HomeFragment"
+        android:name="com.example.epi_app.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/epiPonyFragment"
-        android:name="com.example.epi_app.EpiPonyFragment"
+        android:name="com.example.epi_app.view.EpiPonyFragment"
         android:label="fragment_galery"
         tools:layout="@layout/fragment_epipony" >
         <action
@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/ponyFragment"
-        android:name="com.example.epi_app.PonyFragment"
+        android:name="com.example.epi_app.view.PonyFragment"
         android:label="fragment_pony"
         tools:layout="@layout/fragment_pony" >
         <action
@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemPonyFragment"
-        android:name="com.example.epi_app.ItemPonyFragment"
+        android:name="com.example.epi_app.view.ItemPonyFragment"
         android:label="fragment_item_pony"
         tools:layout="@layout/fragment_item_epipony" >
         <action
@@ -103,7 +103,7 @@
     </fragment>
     <fragment
         android:id="@+id/adminFragment"
-        android:name="com.example.epi_app.AdminFragment"
+        android:name="com.example.epi_app.view.AdminFragment"
         android:label="fragment_admin"
         tools:layout="@layout/fragment_admin" >
         <action
@@ -115,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/teamFragment"
-        android:name="com.example.epi_app.TeamFragment"
+        android:name="com.example.epi_app.view.TeamFragment"
         android:label="fragment_team"
         tools:layout="@layout/fragment_team" >
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/recuperarFragment"
-        android:name="com.example.epi_app.RecuperarFragment"
+        android:name="com.example.epi_app.view.RecuperarFragment"
         android:label="fragment_recuperar"
         tools:layout="@layout/fragment_recuperar" >
         <action
@@ -133,7 +133,7 @@
     </fragment>
     <fragment
         android:id="@+id/adminClaseFragment"
-        android:name="com.example.epi_app.AdminClaseFragment"
+        android:name="com.example.epi_app.view.AdminClaseFragment"
         android:label="fragment_admin_clase"
         tools:layout="@layout/fragment_admin_clase" >
         <action
@@ -145,7 +145,7 @@
     </fragment>
     <fragment
         android:id="@+id/reservarClaseFragment"
-        android:name="com.example.epi_app.ReservarClaseFragment"
+        android:name="com.example.epi_app.view.ReservarClaseFragment"
         android:label="fragment_reservar_clase"
         tools:layout="@layout/fragment_reservar_clase" >
         <action
@@ -157,7 +157,7 @@
     </fragment>
     <fragment
         android:id="@+id/tiendaFragment"
-        android:name="com.example.epi_app.TiendaFragment"
+        android:name="com.example.epi_app.view.TiendaFragment"
         android:label="fragment_tienda"
         tools:layout="@layout/fragment_tienda" >
         <action
@@ -166,7 +166,7 @@
     </fragment>
     <fragment
         android:id="@+id/claseReservadaFragment"
-        android:name="com.example.epi_app.ClaseReservadaFragment"
+        android:name="com.example.epi_app.view.ClaseReservadaFragment"
         android:label="fragment_clase_reservada"
         tools:layout="@layout/fragment_clase_selected" >
         <action
@@ -175,11 +175,23 @@
     </fragment>
     <fragment
         android:id="@+id/adminClaseCnAlumnosFragment"
-        android:name="com.example.epi_app.AdminVerClasesFragment"
+        android:name="com.example.epi_app.view.AdminVerClasesFragment"
         android:label="fragment_admin_clase_cn_alumnos"
         tools:layout="@layout/fragment_admin_ver_clases" >
         <action
             android:id="@+id/action_adminClaseCnAlumnosFragment_to_adminClaseFragment"
             app:destination="@id/adminClaseFragment" />
+        <action
+            android:id="@+id/action_adminClaseCnAlumnosFragment_to_adminClassAlumFragment"
+            app:destination="@id/adminClassAlumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminClassAlumFragment"
+        android:name="com.example.epi_app.view.AdminClassAlumFragment"
+        android:label="fragment_admin_class_alum"
+        tools:layout="@layout/fragment_admin_class_alum" >
+        <action
+            android:id="@+id/action_adminClassAlumFragment_to_adminClaseCnAlumnosFragment"
+            app:destination="@id/adminClaseCnAlumnosFragment" />
     </fragment>
 </navigation>

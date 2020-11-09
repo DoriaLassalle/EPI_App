@@ -2,7 +2,6 @@ package com.example.epi_app.model.local
 
 import androidx.room.*
 
-
 @Entity(tableName = "clase")
 data class ClaseEntity (
     @PrimaryKey(autoGenerate = true)
@@ -13,15 +12,14 @@ data class ClaseEntity (
     val cupos:String,       //val cupos: ArrayList<String>
     val nivel: String,
     //val alumnoEmailId:String
-
 )
 
 {constructor(alumnoEmailId: String): this(0,"","","","",""/*;alumnoEmailId*/)
 
     constructor(dia: String, hora: String, profesor: String, cupos: String, nivel: String): this(0,dia,
     hora, profesor, cupos, nivel)
-
 }
+
 @Entity(primaryKeys = ["email", "id"])
 data class RelationAlumnoClase(
     val email:String,
@@ -49,26 +47,3 @@ data class ClaseWithAlumnos(
     val alumnosConClase:List<AlumnoEntity>
 )
 
-
-
-
-/*
-data class RelationAlumnoClase(
-    @Embedded val alumno: AlumnoEntity,
-    @Relation(
-        parentColumn = "email",
-        entityColumn = "alumnoEmailId"
-    )
-    val claseAlumnoList:List<ClaseEntity>
-
-)*/
-
-
-
-
-
-@Entity
-data class Profesor(
-    @PrimaryKey
-    val nombreProfe: String
-)

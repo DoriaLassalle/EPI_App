@@ -19,8 +19,7 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
     val selectedRecibir = MutableLiveData<String>()
     val selectedName=MutableLiveData<String>()
     val passwordRecibir= MutableLiveData<String>()
-
-
+    val classToModify= MutableLiveData<ClaseEntity>()
 
     init {
         val dao= getDataBase(application).alumnoDao()
@@ -43,10 +42,6 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         selectedRecibir.value = item
     }
 
-    fun recuperarPassword(valor:String){
-        passwordRecibir.value=valor
-    }
-
     fun selectName(name:String){
         selectedName.value=name
     }
@@ -59,10 +54,6 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         myRepository.insertClass(clase)
     }
 
-    fun getAlumnos(){
-         myRepository.getAlumnos()
-    }
-
     fun getAllClases():LiveData<List<ClaseEntity>>{
         return myRepository.getAllClases()
     }
@@ -71,16 +62,20 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         return myRepository.getAlumnoWithClase()
     }
 
+    fun getClasesConAlumnos ():LiveData<List<ClaseWithAlumnos>>{
+        return myRepository.getClasesConAlumnos()
+
+    }
+
                 //validar si el ususario esta en la bd
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
         return myRepository.validateUser(correo, contras)
     }
 
-                //validar si esxite mail para chg de contraseña
+                //validar si exsite mail para chg de contraseña
     fun validateMail(correoElec:String):LiveData<AlumnoEntity>{
         return myRepository.validateMail(correoElec)
     }
-
 
     fun getData(): LiveData<List<PonyEntity>>{
         myRepository.getPonyPhotoFromApi()  //llama a inet
@@ -89,17 +84,14 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
 
     fun getDataTeam(): List<Team> {
         return myRepository.getDataTeam()
-
     }
 
     fun getDataTienda():List<Tienda>{
         return myRepository.getDataTienda()
-
     }
 
     fun getDataHorse():List<EpiPony> {
         return myRepository.getDataHorse()
-
     }
 
     fun carrito(objeto: RelationAlumnoClase){
@@ -118,13 +110,8 @@ class EpiViewModel (application: Application): AndroidViewModel(application){
         myRepository.deleteClase(claseToDelete)
     }
 
-
-
-
-
-
-
-
-
+    fun clasetoModify(adminClase: ClaseEntity){
+        classToModify.value=adminClase
+    }
 
 }

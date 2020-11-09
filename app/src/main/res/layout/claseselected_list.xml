@@ -8,8 +8,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_margin="10dp"
+        app:cardElevation="8dp"
+        android:backgroundTint="#FAEFEF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +30,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="@string/reservaste"
-                android:textColor="#000000"
+                android:textColor="#CB1116"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
@@ -39,6 +42,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:textColor="#000000"
                 android:textSize="20sp"
+                android:textAlignment="center"
                 tools:text="fecha y hora" />
 
             <TextView
@@ -48,6 +52,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 tools:text="hora"
                 android:textColor="#000000"
+                android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
@@ -55,8 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-light"
-                tools:text="pony"
+                android:text="@string/precio"
                 android:textColor="#000000"
+                android:textAlignment="center"
                 android:textSize="20sp" />
 
             <Space

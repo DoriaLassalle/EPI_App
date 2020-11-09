@@ -43,6 +43,12 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
 
     fun getAlumnoWithClase():LiveData<List<AlumnoWithClases>>{
         return myClaseDao.getAlumnoWithClase()
+
+    }
+
+    fun getClasesConAlumnos ():LiveData<List<ClaseWithAlumnos>>{
+        return myClaseDao.getClasesConAlumnos()
+
     }
                             //para validar que el usuario existe en la bd
     fun validateUser(correo:String, contras:String): LiveData<AlumnoEntity>{
@@ -116,7 +122,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
                     "\nEn proceso de formación Coach FEI."))
         teamList.add(Team("JEAN-PIERRE LASSALLE T.", "Profesor Ayudante\n Desde 2016", R.drawable.jp,
             "Desde muy pequeño ligado a la naturaleza,\nel campo y los caballos. Mejor amigo \nde" +
-                    "Cururo.\nActualmente termina su carrera de Ingeniero en Biotecnología, por eso sólo lo " +
+                    " Cururo.\nActualmente termina su carrera de Ingeniero en Biotecnología, por eso sólo lo " +
                     "vemos los fines de semana."))
         teamList.add(
             Team("JORGE NEGRETE", "Ordenanza\nEn la EPI desde 2016", R.drawable.jorge,
@@ -126,7 +132,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         "Mantiene los cascos de nuestros Ponies y Caballos sanos, bien despalmados, aplomados y " +
                 "sin herraduras."))
         teamList.add(Team("CONSUELO BITTNER", "Veterinaria", R.drawable.logoepi, "Veterinaria" +
-                "favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
+                " favorita de los Ponies y Caballos.\nLos ayuda y sana cada vez que tienen un problema, aunque" +
                 " sea pequeño."))
         teamList.add(Team("DOMINIQUE SUNKO", "Veterinaria", R.drawable.logoepi, "Veterinaria " +
                 "amiga de todos los Ponies\ny Caballos.\nEncargada de sus desparasitaciones , vacunas" +
@@ -160,48 +166,43 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
             EpiPony(R.drawable.facehakan, "Hakán", "Llegó a nuestra familia en el " +
                     "verano del 2019, venía sólo por unos meses y se quedó para siempre. Le gusta " +
                     "saltar, es muy rápido\ny bueno para comer. Con alumnos nuevos es muy tranquilo" +
-                    " y paciente.\nApto para todos los niveles.", R.drawable.fullhakan)
-        )
+                    " y paciente.\nApto para todos los niveles.", R.drawable.fullhakan))
         ponyFaceList.add(
             EpiPony(R.drawable.facemilodon, "Milodón", "Él es nuestro crack! Caballo " +
                     "de transición para jinetes avanzados que, luego de aprender y avanzar en ponies," +
                     " pueden montar al rey de la casa. Le encanta saltar, es muy rápido,\nvaliente " +
-                    "y franco.",  R.drawable.fullmilodon)
-        )
+                    "y franco.",  R.drawable.fullmilodon))
         ponyFaceList.add(
             EpiPony(
                 R.drawable.facepapaya, "Papaya", "Tiene 5 años, nació en la Epi y es " +
                         "hija de Vainilla. Súper buena yegüita para\njinetes de nivel intermedio y" +
                         "avanzado.\nEl 2019 ganó el premio \"Binomio mejor presentado\" en el Nacional" +
                         " de Escuelas y ha ganado algunos primeros lugares en adiestramiento nivel " +
-                        "escuela.", R.drawable.fullpapaya
-            )
-        )
+                        "escuela.", R.drawable.fullpapaya))
         ponyFaceList.add(
             EpiPony(R.drawable.faceragnar, "Ragnar", "Es el caballo favorito de todos" +
                     " aunque sólo\nlo montan los profes. Todos lo quieren \nporque siempre esta " +
                     "mirando a los niños que llegan y les pide zanhorias. Le gusta que le rasquen " +
-                    "la frente y las orejas.\nSolo para jinetes nivel avanzado.",R.drawable.fullragnar)
-        )
+                    "la frente y las orejas.\nSolo para jinetes nivel avanzado.",R.drawable.fullragnar))
 
-       /* ponyFaceList.add(
-            EpiPony(R.drawable.facemorena, "Morena", "Morena Mía es su nombre original de la Epi." +
+       ponyFaceList.add(
+            EpiPony(R.drawable.facemorenamia, "Morena", "Morena Mía es su nombre original de la Epi." +
                 " Llegó en el verano del 2020 y no se fue más. Es una santa, muy tierna y  buen " +
-                "caracter. Apta para todos los niveles.", R.drawable.fullmorena))
+                "caracter. Apta para todos los niveles.", R.drawable.fullmorenamia))
 
         ponyFaceList.add(
             EpiPony(R.drawable.facevainilla, "Vainilla", "Llegó a la Epi hace mucho años" +
-                    " y venía con una sorpresa...la Papaya. Es nuestra reina, tiene caracter fuerte " +
-                    "como toda reina pero tiene un corazón dulce y leal como buen caballo. " +
+                    " y venía con\nuna sorpresa...la Papaya. Es nuestra reina, tiene caracter fuerte " +
+                    "como toda reina\npero tiene un corazón dulce y leal\ncomo buen caballo. " +
                     "Apta para jinetes nivel básico, intermedio y avanzado.", R.drawable.fullvainilla))
 
         ponyFaceList.add(
-            EpiPony(R.drawable.facesalem, "Salem", "Es el abuelito de la familia. Llegó " +
+            EpiPony(R.drawable.facesalem, "Salem", "Es el abuelito de la familia.\nLlegó " +
                     "con 18 años a darle equilibrio a la manada. Es un amor, es un caballo paciente," +
                     " obediente hasta con los más pequeños. Apto para todos los niveles", R.drawable.fullsalem))
 
         ponyFaceList.add(
-            EpiPony(R.drawable.facefrodo, "Frodo", "También es abuelito pero no sabemos" +
+            EpiPony(R.drawable.facefrodo, "Frodo", "Es abuelito al igual que Salem, pero no sabemos" +
                     " con exactitud su edad. Está en la Epi desde 2014, es uno de los fundadores" +
                     " junto con Cururo. Tiene excelente carácter y es el encargado de recibir a los" +
                     " baby ponies hasta los 5 años.", R.drawable.fullfrodo))
@@ -209,7 +210,7 @@ class EpiRepository (private val myAlumnoDao: AlumnoDao, private val myPonyDao: 
         ponyFaceList.add(
             EpiPony(R.drawable.facecururo, "Cururo", "Fundador de la Epi con otros " +
                     "ponies que ya no están. Es el encargado de recibir a los niños nivel baby pony " +
-                    "y enseñarles todo para que  pasen a ponies más grandes.", R.drawable.fullcururo))*/
+                    "y enseñarles todo para que  pasen a ponies más grandes.", R.drawable.fullcururo))
 
 
         return ponyFaceList
